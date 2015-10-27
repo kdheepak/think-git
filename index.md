@@ -36,11 +36,11 @@ Note: speaker notes FTW!
 
 # Create
 
-## Clone an existing repository
+## 
 
 `git clone ssh://user@domain.com/repo.git`
 
-## Create a new local repository
+## 
 
 `git init`
 
@@ -54,13 +54,17 @@ Note: speaker notes FTW!
 
 `git diff`
 
+##
+
+`git add <new-file-name>`
+
 ## 
 
 `git add .`
 
 ##
 
-`git add -p <file>`
+`git add -p <file-name>`
 
 ## 
 
@@ -82,4 +86,166 @@ Note: speaker notes FTW!
 
 `git commit --amend -m <message>`
 
+# History
 
+## 
+
+`git log`
+
+## 
+
+`git log -p <file-name>`
+
+## 
+
+`git blame <file-name>`
+
+## 
+
+`git  log --graph --abbrev-commit --decorate --color=always --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) - %C(dim red)%an%C(reset)%C(bold yellow)%d%C(reset)' --all`
+
+# Branches & Tags
+
+## 
+
+`git branch`
+
+## 
+
+`git checkout <branch-name>`
+
+## 
+
+`git checkout -b <new-branch-name>`
+
+## 
+
+`git branch <new-branch-name>`
+
+## 
+
+`git branch --track <new-branch-name> <remote-branch-name>`
+
+##
+
+`git branch -D <local-branch-name>`
+
+##
+
+`git push <remote-name> <remote-branch-name> --delete`
+
+## 
+
+`git tag <tag-name>`
+
+# Update & Publish
+
+##
+
+`git remote -v`
+
+##
+
+`git remote show <remote-name>`
+
+##
+
+`git remote add <remote> <url>`
+
+##
+
+`git fetch <remote>`
+
+##
+
+`git pull <remote-name> <branch-name>`
+
+##
+
+`git push <remote-name> <branch-name>`
+
+##
+
+`git push <remote-name> :<branch-name>`
+
+##
+
+`git push --tags`
+
+# Merge & Rebase
+
+##
+
+`git merge <branch-name>`
+
+##
+
+`git rebase <branch-name>`
+
+##
+
+`git rebase --abort`
+
+##
+
+`git rebase --continue`
+
+##
+
+`git rebase -i <branch-name>`
+
+##
+
+`git mergetool`
+
+##
+
+`git add <resolved-file-name>`
+
+##
+
+`git rm <resolved-file-name>`
+
+# Undo
+
+## 
+
+`git reset --hard HEAD`
+
+## 
+
+`git checkout HEAD <file-name>`
+
+## 
+
+`git revert <commit-hash>`
+
+## 
+
+`git reset --hard <commit-hash>`
+
+## 
+
+`git reset (--mixed) <commit-hash>`
+
+## 
+
+`git reset --soft <commit-hash>`
+
+## 
+
+`git reset --keep <commit-hash>`
+
+# Best Practices
+
+## Commit related changes
+
+## Commit often
+
+## Branches are inexpensive
+
+## Commit only if tests pass
+
+## Write good commit messages!
+
+## Discuss workflow with team
