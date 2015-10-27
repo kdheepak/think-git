@@ -24,12 +24,62 @@
 - Git is different. Forget everything you know about Subversion
 - Data is a stream of snapshots
 
-## 
+## CVS
 ![](https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png)
 
-##
+## Git
 ![](https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png)
 
 <div class="notes">
 Note: speaker notes FTW!
 </div>
+
+# Create
+
+## Clone an existing repository
+
+`git clone ssh://user@domain.com/repo.git`
+
+## Create a new local repository
+
+`git init`
+
+# Local changes
+
+## 
+
+`git status`
+
+## 
+
+`git diff`
+
+## 
+
+`git add .`
+
+##
+
+`git add -p <file>`
+
+## 
+
+`git commit -a`
+
+##
+
+`git commit`
+
+## 
+
+`git commit -m <message>`
+
+## 
+
+`git commit --amend`
+
+## 
+
+`git commit --amend -m <message>`
+
+
