@@ -1,5 +1,31 @@
-% Think Like a Git
-% Dheepak Krishnamurthy
+# 
+
+##
+
+Testing
+
+<div id="chart"></div>
+
+<script>
+var vis = d3.select("#chart")
+  .append("svg:svg").style("padding-top", "100px").style("padding-bottom", "100px");
+
+function displayData() {
+
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 100]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [100.0, 200.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [100.0, 400.0]}, ]};
+
+render(JSONData, vis)
+
+var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}, {"source": 2, "target": 3}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 100]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [100.0, 200.0]}, {"message": "Add more slides", "id": "0212458dc283c2cd23c04a459cfc63b6352276d8", "pos": [100.0, 300.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [100.0, 400.0]}, ]};
+
+render(JSONData, vis)
+}
+
+</script>
+
+<button type="button" onclick="displayData()">Run</button>
+
 
 # What is Git?
 
@@ -84,11 +110,24 @@ Note: speaker notes FTW!
 ## 
 
 `git diff --staged`
+
 `git diff --cached`
 
 ## 
 
-`git diff <first-branch-name> <second-branch-name>`
+`git diff <branch-name-1> <branch-name-2>`
+
+## 
+
+`git diff <commit-hash-1> <commit-hash-2>`
+
+##
+
+`git diff <commit-hash-1> <commit-hash-2> -- <file-name>`
+
+##
+
+`git diff --stat origin/master`
 
 ##
 
@@ -109,7 +148,6 @@ Note: speaker notes FTW!
 ## 
 
 `git rm --cached <file-name>`
-
 
 ## 
 
@@ -134,6 +172,7 @@ Note: speaker notes FTW!
 ## 
 
 `git commit --amend -m <message>`
+
 
 ## 
 
@@ -198,6 +237,23 @@ Note: speaker notes FTW!
 
 ##
 
+lists branches merged into master
+`git branch --merged master` 
+
+##
+
+ # lists branches merged into HEAD (i.e. tip of current branch)
+`git branch --merged`
+
+##
+
+ # lists branches that have not been merged
+`git branch --no-merged`
+
+By default this applies to only the local branches. The -a flag will show both local and remote branches, and the -r flag shows only the remote branches.
+
+##
+
 `git push <remote-name> <remote-branch-name> --delete`
 
 ## 
@@ -213,6 +269,10 @@ Note: speaker notes FTW!
 
 ##
 
+`git remote show <remote-name>`
+
+##
+
 `git remote -v`
 
 ##
@@ -225,6 +285,11 @@ Note: speaker notes FTW!
 
 ##
 
+`git remote set-url <remote-name> git@github.com:<user-name>/<repo-name>.git`
+
+##
+
+
 `git fetch <remote>`
 
 ##
@@ -233,11 +298,23 @@ Note: speaker notes FTW!
 
 ##
 
+`git push --dry-run`
+
+##
+
 `git push <remote-name> <branch-name>`
 
 ##
 
+`git push -u <remote-name> <branch-name>`
+
+##
+
 `git push <remote-name> :<branch-name>`
+
+##
+
+`git push <remote-name> --force`
 
 ##
 
@@ -303,6 +380,12 @@ Note: speaker notes FTW!
 
 `git reset --soft <commit-hash>`
 
+##
+
+This works because 'reset' copied the old head to .git/ORIG_HEAD. If you don't need to edit the old message, use -C instead of -c.
+
+`git commit -c ORIG_HEAD` 
+
 ## 
 
 `git reset --keep <commit-hash>`
@@ -320,3 +403,6 @@ Note: speaker notes FTW!
 ## Write good commit messages!
 
 ## Discuss workflow with team
+
+
+
