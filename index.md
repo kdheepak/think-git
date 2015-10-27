@@ -34,6 +34,24 @@
 Note: speaker notes FTW!
 </div>
 
+# Configure
+
+##
+
+`git config --global user.name "<name>"`
+
+##
+
+`git config --global user.email "<email>"`
+
+##
+
+`git config --global color.ui auto`
+
+##
+
+`.gitconfig`
+
 # Create
 
 ## 
@@ -44,6 +62,10 @@ Note: speaker notes FTW!
 
 `git init`
 
+##
+
+`git init <project-name>; cd <project-name>`
+
 # Local changes
 
 ## 
@@ -52,7 +74,21 @@ Note: speaker notes FTW!
 
 ## 
 
+`git show <commit-hash>`
+
+
+## 
+
 `git diff`
+
+## 
+
+`git diff --staged`
+`git diff --cached`
+
+## 
+
+`git diff <first-branch-name> <second-branch-name>`
 
 ##
 
@@ -65,6 +101,19 @@ Note: speaker notes FTW!
 ##
 
 `git add -p <file-name>`
+
+## 
+
+`git rm <file-name>`
+
+## 
+
+`git rm --cached <file-name>`
+
+
+## 
+
+`git mv <file-name> <new-file-name>`
 
 ## 
 
@@ -85,6 +134,23 @@ Note: speaker notes FTW!
 ## 
 
 `git commit --amend -m <message>`
+
+## 
+
+`git stash`
+
+## 
+
+`git stash pop`
+
+## 
+
+`git stash list`
+
+## 
+
+`git stash drop`
+
 
 # History
 
@@ -138,7 +204,12 @@ Note: speaker notes FTW!
 
 `git tag <tag-name>`
 
+
 # Update & Publish
+
+## 
+
+`git merge <branch-name>`
 
 ##
 
