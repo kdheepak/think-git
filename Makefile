@@ -14,7 +14,7 @@ html:	clean $(HTML)
 
 %.html:	%.md
 	pandoc -s -t revealjs --template=template.html \
-	--variable theme="beige" \
+	--variable theme="simple" \
 	--variable transition="linear" \
 	--variable history=false \
 	--variable controls=false \
