@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title></title>
+  <meta name="author" content="Dheepak Krishnamurthy">
+  <title>Think Like a Git</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,13 +32,15 @@
   <div class="reveal">
     <div class="slides">
 
+<section>
+  <h1 class="title">Think Like a Git</h1>
+  <h2 class="author">Dheepak Krishnamurthy</h2>
+<div id="chart"></div>
+</section>
 
-<section><section id="section" class="titleslide slide level1"><h1></h1></section><section id="section-1" class="slide level2">
+
+<section><section id="what-is-git" class="titleslide slide level1"><h1>What is Git?</h1></section><section id="section" class="slide level2">
 <h1></h1>
-<p>Testing</p>
-<div id="chart">
-
-</div>
 <script>
 var vis = d3.select("#chart")
   .append("svg:svg").style("padding-top", "100px").style("padding-bottom", "100px");
@@ -45,22 +48,14 @@ var vis = d3.select("#chart")
 function displayData() {
 
     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 100]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [100.0, 200.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [100.0, 400.0]}, ]};
-
-render(JSONData, vis)
-
-var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}, {"source": 2, "target": 3}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 100]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [100.0, 200.0]}, {"message": "Add more slides", "id": "0212458dc283c2cd23c04a459cfc63b6352276d8", "pos": [100.0, 300.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [100.0, 400.0]}, ]};
+var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 200]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [400.0, 200.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [700.0, 200.0]}, ]};
 
 render(JSONData, vis)
 }
 
+displayData()
+
 </script>
-<button type="button" onclick="displayData()">
-Run
-</button>
-</section></section>
-<section><section id="what-is-git" class="titleslide slide level1"><h1>What is Git?</h1></section><section id="section-2" class="slide level2">
-<h1></h1>
 <ul>
 <li>Version control system for software development</li>
 <li>Emphasis on speed, data integrity, and support for multiple, distributed, non-linear workflows</li>
@@ -68,14 +63,14 @@ Run
 <li>Easy to learn</li>
 </ul>
 </section></section>
-<section><section id="a-brief-history-of-git" class="titleslide slide level1"><h1>A brief history of Git</h1></section><section id="section-3" class="slide level2">
+<section><section id="a-brief-history-of-git" class="titleslide slide level1"><h1>A brief history of Git</h1></section><section id="section-1" class="slide level2">
 <h1></h1>
 <ul>
 <li><code>git</code> is British English slang for &quot;unpleasant person&quot;. (Linus Torvalds likes to name things after himself.)</li>
 <li>Development began in 2005 because Linus wanted a distributed system that was fast and efficient.</li>
 </ul>
 </section></section>
-<section><section id="so-really-what-is-git" class="titleslide slide level1"><h1>So really, what is Git?</h1></section><section id="section-4" class="slide level2">
+<section><section id="so-really-what-is-git" class="titleslide slide level1"><h1>So really, what is Git?</h1></section><section id="section-2" class="slide level2">
 <h1></h1>
 <ul>
 <li>Git is different. Forget everything you know about Subversion</li>
@@ -95,239 +90,239 @@ Run
 <p>Note: speaker notes FTW!</p>
 </aside>
 </section></section>
-<section><section id="configure" class="titleslide slide level1"><h1>Configure</h1></section><section id="section-5" class="slide level2">
+<section><section id="configure" class="titleslide slide level1"><h1>Configure</h1></section><section id="section-3" class="slide level2">
 <h1></h1>
 <p><code>git config --global user.name &quot;&lt;name&gt;&quot;</code></p>
-</section><section id="section-6" class="slide level2">
+</section><section id="section-4" class="slide level2">
 <h1></h1>
 <p><code>git config --global user.email &quot;&lt;email&gt;&quot;</code></p>
-</section><section id="section-7" class="slide level2">
+</section><section id="section-5" class="slide level2">
 <h1></h1>
 <p><code>git config --global color.ui auto</code></p>
-</section><section id="section-8" class="slide level2">
+</section><section id="section-6" class="slide level2">
 <h1></h1>
 <p><code>.gitconfig</code></p>
 </section></section>
-<section><section id="create" class="titleslide slide level1"><h1>Create</h1></section><section id="section-9" class="slide level2">
+<section><section id="create" class="titleslide slide level1"><h1>Create</h1></section><section id="section-7" class="slide level2">
 <h1></h1>
 <p><code>git clone ssh://user@domain.com/repo.git</code></p>
-</section><section id="section-10" class="slide level2">
+</section><section id="section-8" class="slide level2">
 <h1></h1>
 <p><code>git init</code></p>
-</section><section id="section-11" class="slide level2">
+</section><section id="section-9" class="slide level2">
 <h1></h1>
 <p><code>git init &lt;project-name&gt;; cd &lt;project-name&gt;</code></p>
 </section></section>
-<section><section id="local-changes" class="titleslide slide level1"><h1>Local changes</h1></section><section id="section-12" class="slide level2">
+<section><section id="local-changes" class="titleslide slide level1"><h1>Local changes</h1></section><section id="section-10" class="slide level2">
 <h1></h1>
 <p><code>git status</code></p>
-</section><section id="section-13" class="slide level2">
+</section><section id="section-11" class="slide level2">
 <h1></h1>
 <p><code>git show &lt;commit-hash&gt;</code></p>
-</section><section id="section-14" class="slide level2">
+</section><section id="section-12" class="slide level2">
 <h1></h1>
 <p><code>git diff</code></p>
-</section><section id="section-15" class="slide level2">
+</section><section id="section-13" class="slide level2">
 <h1></h1>
 <p><code>git diff --staged</code></p>
 <p><code>git diff --cached</code></p>
-</section><section id="section-16" class="slide level2">
+</section><section id="section-14" class="slide level2">
 <h1></h1>
 <p><code>git diff &lt;branch-name-1&gt; &lt;branch-name-2&gt;</code></p>
-</section><section id="section-17" class="slide level2">
+</section><section id="section-15" class="slide level2">
 <h1></h1>
 <p><code>git diff &lt;commit-hash-1&gt; &lt;commit-hash-2&gt;</code></p>
-</section><section id="section-18" class="slide level2">
+</section><section id="section-16" class="slide level2">
 <h1></h1>
 <p><code>git diff &lt;commit-hash-1&gt; &lt;commit-hash-2&gt; -- &lt;file-name&gt;</code></p>
-</section><section id="section-19" class="slide level2">
+</section><section id="section-17" class="slide level2">
 <h1></h1>
 <p><code>git diff --stat origin/master</code></p>
-</section><section id="section-20" class="slide level2">
+</section><section id="section-18" class="slide level2">
 <h1></h1>
 <p><code>git add &lt;new-file-name&gt;</code></p>
-</section><section id="section-21" class="slide level2">
+</section><section id="section-19" class="slide level2">
 <h1></h1>
 <p><code>git add .</code></p>
-</section><section id="section-22" class="slide level2">
+</section><section id="section-20" class="slide level2">
 <h1></h1>
 <p><code>git add -p &lt;file-name&gt;</code></p>
-</section><section id="section-23" class="slide level2">
+</section><section id="section-21" class="slide level2">
 <h1></h1>
 <p><code>git rm &lt;file-name&gt;</code></p>
-</section><section id="section-24" class="slide level2">
+</section><section id="section-22" class="slide level2">
 <h1></h1>
 <p><code>git rm --cached &lt;file-name&gt;</code></p>
-</section><section id="section-25" class="slide level2">
+</section><section id="section-23" class="slide level2">
 <h1></h1>
 <p><code>git mv &lt;file-name&gt; &lt;new-file-name&gt;</code></p>
-</section><section id="section-26" class="slide level2">
+</section><section id="section-24" class="slide level2">
 <h1></h1>
 <p><code>git commit -a</code></p>
-</section><section id="section-27" class="slide level2">
+</section><section id="section-25" class="slide level2">
 <h1></h1>
 <p><code>git commit</code></p>
-</section><section id="section-28" class="slide level2">
+</section><section id="section-26" class="slide level2">
 <h1></h1>
 <p><code>git commit -m &lt;message&gt;</code></p>
-</section><section id="section-29" class="slide level2">
+</section><section id="section-27" class="slide level2">
 <h1></h1>
 <p><code>git commit --amend</code></p>
-</section><section id="section-30" class="slide level2">
+</section><section id="section-28" class="slide level2">
 <h1></h1>
 <p><code>git commit --amend -m &lt;message&gt;</code></p>
-</section><section id="section-31" class="slide level2">
+</section><section id="section-29" class="slide level2">
 <h1></h1>
 <p><code>git stash</code></p>
-</section><section id="section-32" class="slide level2">
+</section><section id="section-30" class="slide level2">
 <h1></h1>
 <p><code>git stash pop</code></p>
-</section><section id="section-33" class="slide level2">
+</section><section id="section-31" class="slide level2">
 <h1></h1>
 <p><code>git stash list</code></p>
-</section><section id="section-34" class="slide level2">
+</section><section id="section-32" class="slide level2">
 <h1></h1>
 <p><code>git stash drop</code></p>
 </section></section>
-<section><section id="history" class="titleslide slide level1"><h1>History</h1></section><section id="section-35" class="slide level2">
+<section><section id="history" class="titleslide slide level1"><h1>History</h1></section><section id="section-33" class="slide level2">
 <h1></h1>
 <p><code>git log</code></p>
-</section><section id="section-36" class="slide level2">
+</section><section id="section-34" class="slide level2">
 <h1></h1>
 <p><code>git log -p &lt;file-name&gt;</code></p>
-</section><section id="section-37" class="slide level2">
+</section><section id="section-35" class="slide level2">
 <h1></h1>
 <p><code>git blame &lt;file-name&gt;</code></p>
-</section><section id="section-38" class="slide level2">
+</section><section id="section-36" class="slide level2">
 <h1></h1>
 <p><code>git  log --graph --abbrev-commit --decorate --color=always --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) - %C(dim red)%an%C(reset)%C(bold yellow)%d%C(reset)' --all</code></p>
 </section></section>
-<section><section id="branches-tags" class="titleslide slide level1"><h1>Branches &amp; Tags</h1></section><section id="section-39" class="slide level2">
+<section><section id="branches-tags" class="titleslide slide level1"><h1>Branches &amp; Tags</h1></section><section id="section-37" class="slide level2">
 <h1></h1>
 <p><code>git branch</code></p>
-</section><section id="section-40" class="slide level2">
+</section><section id="section-38" class="slide level2">
 <h1></h1>
 <p><code>git checkout &lt;branch-name&gt;</code></p>
-</section><section id="section-41" class="slide level2">
+</section><section id="section-39" class="slide level2">
 <h1></h1>
 <p><code>git checkout -b &lt;new-branch-name&gt;</code></p>
-</section><section id="section-42" class="slide level2">
+</section><section id="section-40" class="slide level2">
 <h1></h1>
 <p><code>git branch &lt;new-branch-name&gt;</code></p>
-</section><section id="section-43" class="slide level2">
+</section><section id="section-41" class="slide level2">
 <h1></h1>
 <p><code>git branch --track &lt;new-branch-name&gt; &lt;remote-branch-name&gt;</code></p>
-</section><section id="section-44" class="slide level2">
+</section><section id="section-42" class="slide level2">
 <h1></h1>
 <p><code>git branch -D &lt;local-branch-name&gt;</code></p>
-</section><section id="section-45" class="slide level2">
+</section><section id="section-43" class="slide level2">
 <h1></h1>
 <p>lists branches merged into master <code>git branch --merged master</code></p>
-</section><section id="section-46" class="slide level2">
+</section><section id="section-44" class="slide level2">
 <h1></h1>
 <p># lists branches merged into HEAD (i.e. tip of current branch) <code>git branch --merged</code></p>
-</section><section id="section-47" class="slide level2">
+</section><section id="section-45" class="slide level2">
 <h1></h1>
 <p># lists branches that have not been merged <code>git branch --no-merged</code></p>
 <p>By default this applies to only the local branches. The -a flag will show both local and remote branches, and the -r flag shows only the remote branches.</p>
-</section><section id="section-48" class="slide level2">
+</section><section id="section-46" class="slide level2">
 <h1></h1>
 <p><code>git push &lt;remote-name&gt; &lt;remote-branch-name&gt; --delete</code></p>
-</section><section id="section-49" class="slide level2">
+</section><section id="section-47" class="slide level2">
 <h1></h1>
 <p><code>git tag &lt;tag-name&gt;</code></p>
 </section></section>
-<section><section id="update-publish" class="titleslide slide level1"><h1>Update &amp; Publish</h1></section><section id="section-50" class="slide level2">
+<section><section id="update-publish" class="titleslide slide level1"><h1>Update &amp; Publish</h1></section><section id="section-48" class="slide level2">
 <h1></h1>
 <p><code>git merge &lt;branch-name&gt;</code></p>
+</section><section id="section-49" class="slide level2">
+<h1></h1>
+<p><code>git remote show &lt;remote-name&gt;</code></p>
+</section><section id="section-50" class="slide level2">
+<h1></h1>
+<p><code>git remote -v</code></p>
 </section><section id="section-51" class="slide level2">
 <h1></h1>
 <p><code>git remote show &lt;remote-name&gt;</code></p>
 </section><section id="section-52" class="slide level2">
 <h1></h1>
-<p><code>git remote -v</code></p>
+<p><code>git remote add &lt;remote&gt; &lt;url&gt;</code></p>
 </section><section id="section-53" class="slide level2">
 <h1></h1>
-<p><code>git remote show &lt;remote-name&gt;</code></p>
+<p><code>git remote set-url &lt;remote-name&gt; git@github.com:&lt;user-name&gt;/&lt;repo-name&gt;.git</code></p>
 </section><section id="section-54" class="slide level2">
 <h1></h1>
-<p><code>git remote add &lt;remote&gt; &lt;url&gt;</code></p>
+<p><code>git fetch &lt;remote&gt;</code></p>
 </section><section id="section-55" class="slide level2">
 <h1></h1>
-<p><code>git remote set-url &lt;remote-name&gt; git@github.com:&lt;user-name&gt;/&lt;repo-name&gt;.git</code></p>
+<p><code>git pull &lt;remote-name&gt; &lt;branch-name&gt;</code></p>
 </section><section id="section-56" class="slide level2">
 <h1></h1>
-<p><code>git fetch &lt;remote&gt;</code></p>
+<p><code>git push --dry-run</code></p>
 </section><section id="section-57" class="slide level2">
 <h1></h1>
-<p><code>git pull &lt;remote-name&gt; &lt;branch-name&gt;</code></p>
+<p><code>git push &lt;remote-name&gt; &lt;branch-name&gt;</code></p>
 </section><section id="section-58" class="slide level2">
 <h1></h1>
-<p><code>git push --dry-run</code></p>
+<p><code>git push -u &lt;remote-name&gt; &lt;branch-name&gt;</code></p>
 </section><section id="section-59" class="slide level2">
 <h1></h1>
-<p><code>git push &lt;remote-name&gt; &lt;branch-name&gt;</code></p>
+<p><code>git push &lt;remote-name&gt; :&lt;branch-name&gt;</code></p>
 </section><section id="section-60" class="slide level2">
 <h1></h1>
-<p><code>git push -u &lt;remote-name&gt; &lt;branch-name&gt;</code></p>
-</section><section id="section-61" class="slide level2">
-<h1></h1>
-<p><code>git push &lt;remote-name&gt; :&lt;branch-name&gt;</code></p>
-</section><section id="section-62" class="slide level2">
-<h1></h1>
 <p><code>git push &lt;remote-name&gt; --force</code></p>
-</section><section id="section-63" class="slide level2">
+</section><section id="section-61" class="slide level2">
 <h1></h1>
 <p><code>git push --tags</code></p>
 </section></section>
-<section><section id="merge-rebase" class="titleslide slide level1"><h1>Merge &amp; Rebase</h1></section><section id="section-64" class="slide level2">
+<section><section id="merge-rebase" class="titleslide slide level1"><h1>Merge &amp; Rebase</h1></section><section id="section-62" class="slide level2">
 <h1></h1>
 <p><code>git merge &lt;branch-name&gt;</code></p>
-</section><section id="section-65" class="slide level2">
+</section><section id="section-63" class="slide level2">
 <h1></h1>
 <p><code>git rebase &lt;branch-name&gt;</code></p>
-</section><section id="section-66" class="slide level2">
+</section><section id="section-64" class="slide level2">
 <h1></h1>
 <p><code>git rebase --abort</code></p>
-</section><section id="section-67" class="slide level2">
+</section><section id="section-65" class="slide level2">
 <h1></h1>
 <p><code>git rebase --continue</code></p>
-</section><section id="section-68" class="slide level2">
+</section><section id="section-66" class="slide level2">
 <h1></h1>
 <p><code>git rebase -i &lt;branch-name&gt;</code></p>
-</section><section id="section-69" class="slide level2">
+</section><section id="section-67" class="slide level2">
 <h1></h1>
 <p><code>git mergetool</code></p>
-</section><section id="section-70" class="slide level2">
+</section><section id="section-68" class="slide level2">
 <h1></h1>
 <p><code>git add &lt;resolved-file-name&gt;</code></p>
-</section><section id="section-71" class="slide level2">
+</section><section id="section-69" class="slide level2">
 <h1></h1>
 <p><code>git rm &lt;resolved-file-name&gt;</code></p>
 </section></section>
-<section><section id="undo" class="titleslide slide level1"><h1>Undo</h1></section><section id="section-72" class="slide level2">
+<section><section id="undo" class="titleslide slide level1"><h1>Undo</h1></section><section id="section-70" class="slide level2">
 <h1></h1>
 <p><code>git reset --hard HEAD</code></p>
-</section><section id="section-73" class="slide level2">
+</section><section id="section-71" class="slide level2">
 <h1></h1>
 <p><code>git checkout HEAD &lt;file-name&gt;</code></p>
-</section><section id="section-74" class="slide level2">
+</section><section id="section-72" class="slide level2">
 <h1></h1>
 <p><code>git revert &lt;commit-hash&gt;</code></p>
-</section><section id="section-75" class="slide level2">
+</section><section id="section-73" class="slide level2">
 <h1></h1>
 <p><code>git reset --hard &lt;commit-hash&gt;</code></p>
-</section><section id="section-76" class="slide level2">
+</section><section id="section-74" class="slide level2">
 <h1></h1>
 <p><code>git reset (--mixed) &lt;commit-hash&gt;</code></p>
-</section><section id="section-77" class="slide level2">
+</section><section id="section-75" class="slide level2">
 <h1></h1>
 <p><code>git reset --soft &lt;commit-hash&gt;</code></p>
-</section><section id="section-78" class="slide level2">
+</section><section id="section-76" class="slide level2">
 <h1></h1>
 <p>This works because 'reset' copied the old head to .git/ORIG_HEAD. If you don't need to edit the old message, use -C instead of -c.</p>
 <p><code>git commit -c ORIG_HEAD</code></p>
-</section><section id="section-79" class="slide level2">
+</section><section id="section-77" class="slide level2">
 <h1></h1>
 <p><code>git reset --keep &lt;commit-hash&gt;</code></p>
 </section></section>

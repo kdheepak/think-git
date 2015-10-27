@@ -1,10 +1,9 @@
-# 
+% Think Like a Git
+% Dheepak Krishnamurthy
+
+# What is Git?
 
 ##
-
-Testing
-
-<div id="chart"></div>
 
 <script>
 var vis = d3.select("#chart")
@@ -13,23 +12,14 @@ var vis = d3.select("#chart")
 function displayData() {
 
     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 100]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [100.0, 200.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [100.0, 400.0]}, ]};
-
-render(JSONData, vis)
-
-var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}, {"source": 2, "target": 3}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 100]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [100.0, 200.0]}, {"message": "Add more slides", "id": "0212458dc283c2cd23c04a459cfc63b6352276d8", "pos": [100.0, 300.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [100.0, 400.0]}, ]};
+var JSONData = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "links": [{"source": 0, "target": 1}, {"source": 1, "target": 2}], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 200]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [400.0, 200.0]}, {"message": "Add index.html", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [700.0, 200.0]}, ]};
 
 render(JSONData, vis)
 }
 
+displayData()
+
 </script>
-
-<button type="button" onclick="displayData()">Run</button>
-
-
-# What is Git?
-
-##
 
 - Version control system for software development
 - Emphasis on speed, data integrity, and support for multiple, distributed, non-linear workflows
