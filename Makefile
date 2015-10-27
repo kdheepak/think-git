@@ -13,11 +13,13 @@ all:	$(HTML)
 html:	clean $(HTML)
 
 %.html:	%.md
-	pandoc -s -t revealjs --standalone --section-divs \
-  --variable theme="beige" \
-  --variable transition="linear" \
-  -o $@ $<
+	pandoc -s -t revealjs --template=template.html \
+	--variable theme="beige" \
+	--variable transition="linear" \
+	--variable history=false \
+	--variable controls=false \
+	  -o $@ $<
 
 clean:
-	rm -f *.html 
+	find . -name "*.html" ! -name "template.html" -maxdepth 1  -delete
 
