@@ -1,7 +1,7 @@
 Reveal.initialize();
 
 
-Reveal.addEventListener( 'stats', function() {
+Reveal.addEventListener( 'title-event', function() {
     var h = 50*1.5*JSONData0.nodes.length;
     setTimeout(displayData, 500, JSONData0);
 
@@ -11,7 +11,7 @@ Reveal.addEventListener( 'stats', function() {
 } );
 
 
-var vis = d3.select("#chart").style("padding-top", "0px").style("padding-bottom", "100px");
+var vis = d3.select("#title-chart").style("padding-top", "0px").style("padding-bottom", "100px");
 function displayData(data) {
 render(data, vis, h);
 }
