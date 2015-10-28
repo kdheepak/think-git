@@ -73,6 +73,12 @@ var PosY = function(d, i, location) { return scaleY.invert(data.nodes[d[location
 
             nodeUpdateSelection.exit().remove();
 
+            d3.selection.prototype.moveToFront = function() {
+              return this.each(function(){
+              this.parentNode.appendChild(this);
+              });
+            };
+
             nodeUpdateSelection.enter().append("svg:circle")
               .attr("class", "node")
               .attr("cx", function(d, i) { return scaleX(d.pos[0]); })
@@ -85,6 +91,7 @@ var PosY = function(d, i, location) { return scaleY.invert(data.nodes[d[location
                   .ease('cubic-out')
                   .duration('200')
                   .attr("r", 20);
+                d3.select(this).moveToFront();
               })
               .on('mouseout', function(d,i) {
                 d3.select(this).transition()
@@ -99,7 +106,10 @@ var PosY = function(d, i, location) { return scaleY.invert(data.nodes[d[location
                 .attr("cx", function(d, i) { return scaleX(d.pos[0]); })
                 .attr("cy", function(d, i) { return scaleY.invert(d.pos[1]); })
                 .attr('fill', function(d, i) {if (reverseMap[d.id]==reverseMap[data['HEAD']]){return '#99FF66';} else {return '#EEEEEE';}} )
-                .attr("r", 10)
+                .attr("r", 10).each(function() { 
+                 var sel = d3.select(this);
+                  sel.moveToFront(); 
+                });
 
             var textUpdateSelection = vis.selectAll("text.message")
                 .data(data.nodes, function(d) {return d.id});
