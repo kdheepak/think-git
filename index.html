@@ -329,13 +329,14 @@
 
                 function displayData1() {
                     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-                render(JSONData1, vis);
+                render(JSONData1, vis, h);
                 }
                 function displayData2() {
                     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-                render(JSONData2, vis);
+                render(JSONData2, vis, h);
                 }
                 var JSONData1 = {"directed": true, "HEAD": "1ddefaae6634d68350f4b738702f1103442c1af4", "links": [{"source": 0, "target": 1}, ], "multigraph": false, "graph": [], "labels": ["gh-pages"], "gh-pages": "1ddefaae6634d68350f4b738702f1103442c1af4", "nodes": [{"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [100, 200]}, {"message": "Use template.html", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [400.0, 200.0]} ]};
+                var h = 50*1.5*JSONData1.nodes.length;
 
                 setTimeout(function(){ displayData1(); }, 1000);
 

@@ -1,23 +1,16 @@
-render = function(JSONData, vis) {
+render = function(JSONData, vis, h) {
 
 var w = 1500,
     H = 50,
     fill = d3.scale.category20();
 
-var h = H;
-
-
 console.log(JSONData.nodes)
 
 var data = JSONData
 
-h = H*1.5*data.nodes.length;
-    vis.attr("height", h)
-    .attr("width", w);
+vis.attr("width", w);
 
-h = H*1.5*data.nodes.length;
-
-        vis.attr("height", h);
+    vis.attr("height", h);
 
     var transitiontime = 0;
 
