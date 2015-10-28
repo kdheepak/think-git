@@ -85,12 +85,13 @@ var PosY = function(d, i, location) { return scaleY.invert(data.nodes[d[location
               .attr("cx", function(d, i) { return scaleX(d.pos[0]); })
               .attr("cy", function(d, i) { return scaleY.invert(d.pos[1]); })
               .attr("r", 0)
-              .attr('fill', function(d, i) {if (reverseMap[d.id]==reverseMap[data['HEAD']]){return '#99FF66';} else {return 'red';}} )
+              .attr('fill', function(d, i) {if (reverseMap[d.id]==reverseMap[data['HEAD']]){return '#99FF66';} else {return '#EEEEEE';}})
+              .attr('stroke', function(d, i) {if (reverseMap[d.id]==reverseMap[data['HEAD']]){return '#FF0000';} else {return '#888888';}})
               .on('mouseover', function(d,i) {
                 d3.select(this).transition()
                   .ease('cubic-out')
                   .duration('200')
-                  .attr("r", 15);
+                  .attr("r", 20);
               })
               .on('mouseout', function(d,i) {
                 d3.select(this).transition()
@@ -104,7 +105,7 @@ var PosY = function(d, i, location) { return scaleY.invert(data.nodes[d[location
                 .attr("class", "node")
                 .attr("cx", function(d, i) { return scaleX(d.pos[0]); })
                 .attr("cy", function(d, i) { return scaleY.invert(d.pos[1]); })
-                .attr('fill', function(d, i) {if (reverseMap[d.id]==reverseMap[data['HEAD']]){return '#99FF66';} else {return 'red';}} )
+                .attr('fill', function(d, i) {if (reverseMap[d.id]==reverseMap[data['HEAD']]){return '#99FF66';} else {return '#EEEEEE';}} )
                 .attr("r", 10)
 
             var textUpdateSelection = vis.selectAll("text.message")
