@@ -1,6 +1,3 @@
 [submodule "reveal.js"]
 	path = reveal.js
 	url = https://github.com/hakimel/reveal.js.git
-[submodule "remark"]
-	path = remark
-	url = https://github.com/gnab/remark.git
