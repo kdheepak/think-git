@@ -1,4 +1,4 @@
-render = function(JSONData, vis, h) {
+render = function(JSONData, vis, h, scaleY) {
 
 var w = 1500,
     H = 50,
@@ -13,10 +13,6 @@ vis.attr("width", w);
     vis.attr("height", h);
 
     var transitiontime = 0;
-
-    scaleY = d3.scale.linear()
-        .range([d3.min(data.nodes, function(d){return d.pos[1]} ), d3.max(data.nodes, function(d){return d.pos[1]} )])
-        .domain([h, 0])
 
     var scaleX = function(d){return d}
 
