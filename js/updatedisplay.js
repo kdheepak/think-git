@@ -32,12 +32,16 @@ Reveal.addEventListener( 'fragmentshown', function( event ) {
         setTimeout(displayData, 0, JSONData0_demo1, vis, h, scaleY);
         // do stuff
     }
-    if (classAttribute.indexOf("demo1-git-commit") > -1) {
+    if (classAttribute.indexOf("demo1-git-commit-1") > -1) {
         setTimeout(displayData, 0, JSONData1_demo1, vis, h, scaleY);
         // do stuff
     }
-    if (classAttribute.indexOf("demo1-git-push") > -1) {
+    if (classAttribute.indexOf("demo1-git-commit-2") > -1) {
         setTimeout(displayData, 0, JSONData2_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo1-git-push") > -1) {
+        setTimeout(displayData, 0, JSONData3_demo1, vis, h, scaleY);
         // do stuff
     }
     //setTimeout(displayData, 1500, JSONData1_demo1, vis, h);
@@ -51,12 +55,16 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
         setTimeout(displayData, 0, JSONData0, vis, h, scaleY);
         // do stuff
     }
-    if (classAttribute.indexOf("demo1-git-commit") > -1) {
+    if (classAttribute.indexOf("demo1-git-commit-1") > -1) {
         setTimeout(displayData, 0, JSONData0_demo1, vis, h, scaleY);
         // do stuff
     }
-    if (classAttribute.indexOf("demo1-git-push") > -1) {
+    if (classAttribute.indexOf("demo1-git-commit-2") > -1) {
         setTimeout(displayData, 0, JSONData1_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo1-git-push") > -1) {
+        setTimeout(displayData, 0, JSONData2_demo1, vis, h, scaleY);
         // do stuff
     }
 } );
@@ -76,6 +84,6 @@ render(data, vis, h, scaleY);
         .range([d3.min(data.nodes, function(d){return d.pos[1]} ), d3.max(data.nodes, function(d){return d.pos[1]} )])
         .domain([h, 0]);
 
-    setTimeout(displayData, 500, JSONData0_title, vis, h, scaleY);
-    setTimeout(displayData, 1500, JSONData1_title, vis, h, scaleY);
-    setTimeout(displayData, 2500, JSONData2_title, vis, h, scaleY);
+    setTimeout(displayData, 0, JSONData0_title, vis, h, scaleY);
+    setTimeout(displayData, 1000, JSONData1_title, vis, h, scaleY);
+    setTimeout(displayData, 2000, JSONData2_title, vis, h, scaleY);

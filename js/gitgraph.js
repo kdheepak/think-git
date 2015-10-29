@@ -158,8 +158,8 @@ var PosY = function(d, i, location) { return scaleY.invert(data.nodes[d[location
                          .transition()
                          .delay(function(d,i) {return i*transitiontime})
                             .style('fill-opacity', 1)
-             .attr("x", function(d, i) { return scaleX(labelPosX(data[d])) - 50 ; })
-             .attr("y", function(d, i) { return scaleY.invert(labelPosY(data[d])) - 25 + i*5; })
+             .attr("x", function(d, i) { return scaleX(labelPosX(data[d])) - 125 ; })
+             .attr("y", function(d, i) { return scaleY.invert(labelPosY(data[d])) - i*25; })
              .attr("class", "labels")
              .attr("font-family", "sans-serif")
              .attr("font-size", "15px");
