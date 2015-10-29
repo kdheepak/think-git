@@ -85,6 +85,61 @@ Reveal.initialize({
 }
 );
 
+
+Reveal.addEventListener( 'demo3-event', function() {
+    var vis = d3.select("#demo3-chart").style("padding-top", "100px").style("padding-bottom", "100px");
+
+    var h = 50*1.5*JSONData2_demo1.nodes.length;
+
+    var data = JSONData2_demo1;
+    var scaleY = d3.scale.linear()
+        .range([d3.min(data.nodes, function(d){return d.pos[1]} ), d3.max(data.nodes, function(d){return d.pos[1]} )])
+        .domain([h, 0]);
+
+Reveal.addEventListener( 'fragmentshown', function( event ) {
+    var classAttribute = event.fragment.getAttribute("class")
+    if (classAttribute.indexOf("demo3-git-add") > -1) {
+        setTimeout(displayData, 500, JSONData0_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo3-git-commit-1") > -1) {
+        setTimeout(displayData, 500, JSONData1_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo3-git-commit-2") > -1) {
+        setTimeout(displayData, 500, JSONData2_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo3-git-push") > -1) {
+        setTimeout(displayData, 500, JSONData3_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    //setTimeout(displayData, 1500, JSONData1_demo1, vis, h);
+    //setTimeout(displayData, 2500, JSONData2_demo1, vis, h);
+} );   
+
+Reveal.addEventListener( 'fragmenthidden', function( event ) {
+    console.log(event.fragment.getAttribute("class"))
+    var classAttribute = event.fragment.getAttribute("class")
+    if (classAttribute.indexOf("demo3-git-add") > -1) {
+        setTimeout(displayData, 0, JSONData0, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo3-git-commit-1") > -1) {
+        setTimeout(displayData, 500, JSONData0_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo3-git-commit-2") > -1) {
+        setTimeout(displayData, 500, JSONData1_demo1, vis, h, scaleY);
+        // do stuff
+    }
+    if (classAttribute.indexOf("demo3-git-push") > -1) {
+        setTimeout(displayData, 500, JSONData2_demo1, vis, h, scaleY);
+        // do stuff
+    }
+} );
+
+} ); // end addEventListener
 Reveal.addEventListener( 'demo2-event', function() {
     var vis = d3.select("#demo2-chart").style("padding-top", "100px").style("padding-bottom", "100px");
 
