@@ -85,6 +85,49 @@ Reveal.initialize({
 }
 );
 
+Reveal.addEventListener( 'demo5-event', function() {
+    var vis = d3.select("#demo5-chart").style("padding-top", "100px").style("padding-bottom", "100px");
+
+    var h = 50*1.5*JSONData4_demo4.nodes.length;
+
+    var data = JSONData4_demo4;
+    var scaleY = d3.scale.linear()
+        .range([d3.min(data.nodes, function(d){return d.pos[1]} ), d3.max(data.nodes, function(d){return d.pos[1]} )])
+        .domain([h, 0]);
+
+Reveal.addEventListener( 'fragmentshown', function( event ) {
+    console.log(event.fragment.getAttribute("class"))
+    var classAttribute = event.fragment.getAttribute("class")
+    if (classAttribute.indexOf("demo5-start") > -1) {
+        setTimeout(displayData, 500, JSONData2_demo3, vis, h, scaleY);
+    }
+    else if (classAttribute.indexOf("demo5-git-fetch") > -1) {
+        setTimeout(displayData, 500, JSONData4_demo3, vis, h, scaleY);
+    }
+    else if (classAttribute.indexOf("demo5-git-rebase-1") > -1) {
+        setTimeout(displayData, 500, JSONData4_demo5, vis, h, scaleY);
+    }
+    else if (classAttribute.indexOf("demo5-git-rebase-2") > -1) {
+        setTimeout(displayData, 500, JSONData5_demo5, vis, h, scaleY);
+    }
+} );   
+
+Reveal.addEventListener( 'fragmenthidden', function( event ) {
+    console.log(event.fragment.getAttribute("class"))
+    var classAttribute = event.fragment.getAttribute("class")
+    if (classAttribute.indexOf("demo5-git-fetch") > -1) {
+        setTimeout(displayData, 500, JSONData2_demo3, vis, h, scaleY);
+    }
+    else if (classAttribute.indexOf("demo5-git-rebase-1") > -1) {
+        setTimeout(displayData, 500, JSONData4_demo3, vis, h, scaleY);
+    }
+    else if (classAttribute.indexOf("demo5-git-rebase-2") > -1) {
+        setTimeout(displayData, 500, JSONData4_demo5, vis, h, scaleY);
+    }
+} );
+
+} ); // end addEventListener
+
 
 Reveal.addEventListener( 'demo4-event', function() {
     var vis = d3.select("#demo4-chart").style("padding-top", "100px").style("padding-bottom", "100px");
@@ -100,10 +143,7 @@ Reveal.addEventListener( 'fragmentshown', function( event ) {
     console.log(event.fragment.getAttribute("class"))
     var classAttribute = event.fragment.getAttribute("class")
     if (classAttribute.indexOf("demo4-start") > -1) {
-        setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
-    }
-    else if (classAttribute.indexOf("demo4-git-commit") > -1) {
-        setTimeout(displayData, 500, JSONData3_demo4, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData2_demo3, vis, h, scaleY);
     }
     else if (classAttribute.indexOf("demo4-git-fetch") > -1) {
         setTimeout(displayData, 500, JSONData4_demo3, vis, h, scaleY);
@@ -116,14 +156,11 @@ Reveal.addEventListener( 'fragmentshown', function( event ) {
 Reveal.addEventListener( 'fragmenthidden', function( event ) {
     console.log(event.fragment.getAttribute("class"))
     var classAttribute = event.fragment.getAttribute("class")
-    if (classAttribute.indexOf("demo4-git-commit") > -1) {
-        setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
-    }
-    else if (classAttribute.indexOf("demo4-git-fetch") > -1) {
-        setTimeout(displayData, 500, JSONData3_demo4, vis, h, scaleY);
+    if (classAttribute.indexOf("demo4-git-fetch") > -1) {
+        setTimeout(displayData, 500, JSONData2_demo3, vis, h, scaleY);
     }
     else if (classAttribute.indexOf("demo4-git-merge") > -1) {
-        setTimeout(displayData, 500, JSONData4_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData4_demo3, vis, h, scaleY);
     }
 } );
 
