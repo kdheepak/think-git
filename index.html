@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
         <!-- d3.js -->
         <script src='http://d3js.org/d3.v3.min.js'></script>
@@ -40,6 +41,76 @@
                             <a style="color: rgba(255, 255, 255, 1)" href="https://git-scm.com/" data-preview-link>https://git-scm.com</a>
 						</div>
                     </section>
+                </section>
+                <section>
+                    <section id="a-brief-history-of-git" class="titleslide slide level1"><h1>A brief history of Git</h1></section>
+                    <section id="section-1" class="slide level2">
+                        <h1></h1>
+                        <ul>
+                        <li><code>git</code> is British English slang for &quot;unpleasant person&quot;. (Linus Torvalds likes to name things after himself.)</li>
+                        <li>Development began in 2005 because Linus wanted a distributed system that was fast and efficient.</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="so-really-what-is-git" class="titleslide slide level1"><h1>So really, what is Git?</h1></section>
+                    <section id="section-2" class="slide level2">
+                    <h1></h1>
+                    <ul>
+                    <li>Git is different. Forget everything you know about Subversion</li>
+                    <li>Data is a stream of snapshots</li>
+                    </ul>
+                    </section><section id="cvs" class="slide level2">
+                    <h1>CVS</h1>
+                    <figure>
+                    <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
+                    </figure>
+                    </section><section id="git" class="slide level2">
+                    <h1>Git</h1>
+                    <figure>
+                    <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
+                    </figure>
+                    <aside class="notes">
+                    <p>Note: speaker notes FTW!</p>
+                    </aside>
+                    </section>
+                    <section id="network" data-state="network" class="slide level2">
+                        Networks of commits
+                        <figure>
+                            <img src="img/git-flow.png" alt=""/>
+                        </figure>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="configure" class="titleslide slide level1"><h1>Configure</h1></section><section id="section-3" class="slide level2">
+                    <h1></h1>
+                    <p><code>git config --global user.name &quot;&lt;name&gt;&quot;</code></p>
+                    </section><section id="section-4" class="slide level2">
+                    <h1></h1>
+                    <p><code>git config --global user.email &quot;&lt;email&gt;&quot;</code></p>
+                    </section><section id="section-5" class="slide level2">
+                    <h1></h1>
+                    <p><code>git config --global color.ui auto</code></p>
+                    </section><section id="section-6" class="slide level2">
+                    <h1></h1>
+                    <p><code>.gitconfig</code></p>
+                    </section>
+                </section>
+
+                <section><section id="create" class="titleslide slide level1"><h1>Create</h1></section><section id="section-7" class="slide level2">
+                <h1></h1>
+                <p><code>git clone ssh://user@domain.com/repo.git</code></p>
+                </section><section id="section-8" class="slide level2">
+                <h1></h1>
+                <p><code>git init</code></p>
+                </section><section id="section-9" class="slide level2">
+                <h1></h1>
+                <p><code>git init &lt;project-name&gt;; cd &lt;project-name&gt;</code></p>
+                </section></section>
+
+                <section><section id="local-changes" class="titleslide slide level1"><h1>Local changes</h1></section>
                     <section data-state="demo1-event">
                         <div style="background-color: rgb(0, 0, 0); width: 100%; height: 400%; position: absolute; top: -100%; left: -45%; z-index: -1;"></div>
                             <div style="width: 50%; display: inline-block;">
@@ -76,74 +147,11 @@
                                 <svg id="demo1-chart"></svg>
                             </div>
                     </section>
-                </section>
-
-                <section>
-                    <section id="a-brief-history-of-git" class="titleslide slide level1"><h1>A brief history of Git</h1></section>
-                    <section id="section-1" class="slide level2">
+                    <section id="section-10" class="slide level2">
                         <h1></h1>
-                        <ul>
-                        <li><code>git</code> is British English slang for &quot;unpleasant person&quot;. (Linus Torvalds likes to name things after himself.)</li>
-                        <li>Development began in 2005 because Linus wanted a distributed system that was fast and efficient.</li>
-                        </ul>
+                        <p><code>git status</code></p>
                     </section>
-                </section>
-
-                <section>
-                    <section id="so-really-what-is-git" class="titleslide slide level1"><h1>So really, what is Git?</h1></section>
-                    <section id="section-2" class="slide level2">
-                    <h1></h1>
-                    <ul>
-                    <li>Git is different. Forget everything you know about Subversion</li>
-                    <li>Data is a stream of snapshots</li>
-                    </ul>
-                    </section><section id="cvs" class="slide level2">
-                    <h1>CVS</h1>
-                    <figure>
-                    <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
-                    </figure>
-                    </section><section id="git" class="slide level2">
-                    <h1>Git</h1>
-                    <figure>
-                    <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
-                    </figure>
-                    <aside class="notes">
-                    <p>Note: speaker notes FTW!</p>
-                    </aside>
-                    </section>
-                </section>
-
-                <section>
-                    <section id="configure" class="titleslide slide level1"><h1>Configure</h1></section><section id="section-3" class="slide level2">
-                    <h1></h1>
-                    <p><code>git config --global user.name &quot;&lt;name&gt;&quot;</code></p>
-                    </section><section id="section-4" class="slide level2">
-                    <h1></h1>
-                    <p><code>git config --global user.email &quot;&lt;email&gt;&quot;</code></p>
-                    </section><section id="section-5" class="slide level2">
-                    <h1></h1>
-                    <p><code>git config --global color.ui auto</code></p>
-                    </section><section id="section-6" class="slide level2">
-                    <h1></h1>
-                    <p><code>.gitconfig</code></p>
-                    </section>
-                </section>
-
-                <section><section id="create" class="titleslide slide level1"><h1>Create</h1></section><section id="section-7" class="slide level2">
-                <h1></h1>
-                <p><code>git clone ssh://user@domain.com/repo.git</code></p>
-                </section><section id="section-8" class="slide level2">
-                <h1></h1>
-                <p><code>git init</code></p>
-                </section><section id="section-9" class="slide level2">
-                <h1></h1>
-                <p><code>git init &lt;project-name&gt;; cd &lt;project-name&gt;</code></p>
-                </section></section>
-
-                <section><section id="local-changes" class="titleslide slide level1"><h1>Local changes</h1></section><section id="section-10" class="slide level2">
-                <h1></h1>
-                <p><code>git status</code></p>
-                </section><section id="section-11" class="slide level2">
+                <section id="section-11" class="slide level2">
                 <h1></h1>
                 <p><code>git show &lt;commit-hash&gt;</code></p>
                 </section><section id="section-12" class="slide level2">

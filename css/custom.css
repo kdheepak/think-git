@@ -1,0 +1,12 @@
+html.network img {
+	position:center;
+    height:17.5em;
+}
+
+.backgrounds {
+     -webkit-filter: blur(5px);
+     -moz-filter: blur(50px);
+     -o-filter: blur(5px);
+     -ms-filter: blur(5px);
+     filter: blur(5px);
+ }
