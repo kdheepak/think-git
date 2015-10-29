@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="reveal.js/css/reveal.css">
-        <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+        <link rel="stylesheet" href="css/custom.css">
         <!-- d3.js -->
         <script src='http://d3js.org/d3.v3.min.js'></script>
         <!-- gitgraph.js -->
@@ -31,15 +31,79 @@
                     <section id="section" class="slide level2">
                         <h1></h1>
                         <ul>
-                        <li>Version control system</li>
-                        <li>Free open source, distributed VCS designed for speed and data integrity</li>
-                        <li>Easy to learn</li>
+                            <li>Free </li>
+                            <li>Fast </li>
+                            <li>Secure </li>
+                            <li>Supports multiple non linear workflows</li>
+                            <li class="fragment current-visible"><b>Easy to learn</b></li>
                         </ul>
                     </section>
                     <section class="slide level2" data-background="img/git-scm.png" >
                         <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
                             <a style="color: rgba(255, 255, 255, 1)" href="https://git-scm.com/" data-preview-link>https://git-scm.com</a>
 						</div>
+                    </section>
+                    <section class="slide level2" >
+                        Git is fast
+                         <table width="100%">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.649,2.6&amp;chds=0,2.6&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Commit A" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:1.53,24.7&amp;chds=0,24.7&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Commit B" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.257,1.09&amp;chds=0,1.09&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Diff Curr" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.248,3.99&amp;chds=0,3.99&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Diff Rec" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:1.17,83.57&amp;chds=0,83.57&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Diff Tags" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git*|git|svn&amp;chd=t:21.0,107.5,14.0&amp;chds=0,107.5&amp;chs=100x125&amp;chco=E09FA0|E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Clone" alt="init benchmarks">
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.012,0.381&amp;chds=0,0.381&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Log (50)" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.519,169.197&amp;chds=0,169.197&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Log (All)" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.601,82.843&amp;chds=0,82.843&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Log (File)" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:0.896,2.816&amp;chds=0,2.816&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Update" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:1.91,3.04&amp;chds=0,3.04&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Blame" alt="init benchmarks">
+                                  </td>
+                                  <td>
+                                    <img src="https://chart.googleapis.com/chart?chxt=x&amp;cht=bvs&amp;chl=git|svn&amp;chd=t:181,132&amp;chds=0,181&amp;chs=100x125&amp;chco=E09FA0|E05F49&amp;chf=bg,s,fcfcfa&amp;chtt=Size" alt="init benchmarks">
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                    </section>
+                    <section>
+                        <h3>Distributed non linear workflows</h3>
+                        <p class="center fragment current-visible" style="position: absolute">
+                            Subversion-Style Workflow
+                            <img src="https://git-scm.com/images/about/workflow-a@2x.png" height="500em" alt="Workflow A">
+                        </p>
+                        <p class="center fragment current-visible" style="position: absolute">
+                            Integration Manager Workflow
+                            <img src="https://git-scm.com/images/about/workflow-b@2x.png" height="500em" alt="Workflow B">
+                        </p>
+                        <p class="center fragment current-visible" style="position: absolute">
+                            Dictator and Lieutenants Workflow
+                            <img src="https://git-scm.com/images/about/workflow-c@2x.png" height="500em" alt="Workflow C">
+                        </p>
                     </section>
                 </section>
                 <section>
@@ -58,7 +122,8 @@
                     <section id="section-2" class="slide level2">
                     <h1></h1>
                     <ul>
-                    <li>Git is different. Forget everything you know about Subversion</li>
+                    <li> git is not GitHub </li>
+                    <li> git is not Dropbox </li>
                     <li>Data is a stream of snapshots</li>
                     </ul>
                     </section><section id="cvs" class="slide level2">
