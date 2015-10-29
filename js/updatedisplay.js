@@ -9,20 +9,20 @@ Reveal.addEventListener( 'demo2-event', function() {
     var scaleY = d3.scale.linear()
         .range([d3.min(data.nodes, function(d){return d.pos[1]} ), d3.max(data.nodes, function(d){return d.pos[1]} )])
         .domain([h, 0]);
-        setTimeout(displayData, 0, JSONData0_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
 
 Reveal.addEventListener( 'fragmentshown', function( event ) {
     var classAttribute = event.fragment.getAttribute("class")
     if (classAttribute.indexOf("demo2-git-checkout-1") > -1) {
-        setTimeout(displayData, 0, JSONData1_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData1_demo2, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo2-git-checkout-2") > -1) {
-        setTimeout(displayData, 0, JSONData2_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData2_demo2, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo2-git-merge") > -1) {
-        setTimeout(displayData, 0, JSONData0_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
         // do stuff
     }
     //setTimeout(displayData, 1500, JSONData1_demo1, vis, h);
@@ -33,15 +33,15 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
     console.log(event.fragment.getAttribute("class"))
     var classAttribute = event.fragment.getAttribute("class")
     if (classAttribute.indexOf("demo2-git-checkout-1") > -1) {
-        setTimeout(displayData, 0, JSONData0_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo2-git-checkout-2") > -1) {
-        setTimeout(displayData, 0, JSONData1_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData1_demo2, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo2-git-merge") > -1) {
-        setTimeout(displayData, 0, JSONData2_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData2_demo2, vis, h, scaleY);
         // do stuff
     }
 } );
@@ -62,19 +62,19 @@ Reveal.addEventListener( 'demo1-event', function() {
 Reveal.addEventListener( 'fragmentshown', function( event ) {
     var classAttribute = event.fragment.getAttribute("class")
     if (classAttribute.indexOf("demo1-git-add") > -1) {
-        setTimeout(displayData, 0, JSONData0_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData0_demo1, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo1-git-commit-1") > -1) {
-        setTimeout(displayData, 0, JSONData1_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData1_demo1, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo1-git-commit-2") > -1) {
-        setTimeout(displayData, 0, JSONData2_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData2_demo1, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo1-git-push") > -1) {
-        setTimeout(displayData, 0, JSONData3_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData3_demo1, vis, h, scaleY);
         // do stuff
     }
     //setTimeout(displayData, 1500, JSONData1_demo1, vis, h);
@@ -89,15 +89,15 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
         // do stuff
     }
     if (classAttribute.indexOf("demo1-git-commit-1") > -1) {
-        setTimeout(displayData, 0, JSONData0_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData0_demo1, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo1-git-commit-2") > -1) {
-        setTimeout(displayData, 0, JSONData1_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData1_demo1, vis, h, scaleY);
         // do stuff
     }
     if (classAttribute.indexOf("demo1-git-push") > -1) {
-        setTimeout(displayData, 0, JSONData2_demo1, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData2_demo1, vis, h, scaleY);
         // do stuff
     }
 } );
