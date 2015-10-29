@@ -3,14 +3,6 @@ html.network img {
     height:17.5em;
 }
 
-.backgrounds {
-     -webkit-filter: blur(5px);
-     -moz-filter: blur(50px);
-     -o-filter: blur(5px);
-     -ms-filter: blur(5px);
-     filter: blur(5px);
- }
- 
 .reveal section img {
     border: 0px solid #000;
 }
