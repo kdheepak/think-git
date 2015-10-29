@@ -19,15 +19,15 @@
 
             <div class="slides">
 
-                <section data-state="title-event">
+                <section data-state="title-event"  data-transition="slide">
                   <h1 class="title">Think With Git</h1>
                     <div id="divchart">
                         <svg id="title-chart"></svg>
                     </div>
                 </section>
 
-                <section>
-                    <section id="what-is-git" class="titleslide slide level1"><h1>What is Git?</h1></section>
+                <section data-transition="slide">
+                    <section id="what-is-git" class="titleslide slide level1" data-transition="slide"><h1>What is Git?</h1></section>
                     <section id="section" class="slide level2">
                         <h1></h1>
                         <ul>
@@ -95,21 +95,27 @@
                             <br>
                             <a href="https://git-scm.com/about/small-and-fast">Link</a>
                     </section>
-                    <section>
+                    <section data-transition="none">
                         <h3>Distributed non linear workflows</h3>
-                        <p class="center fragment current-visible" style="position: absolute">
+                        <p class="center" style="position: absolute">
                             Subversion-Style Workflow
                             <img src="https://git-scm.com/images/about/workflow-a@2x.png" height="500em" alt="Workflow A">
                             <br>
                             <a href="https://git-scm.com/about/distributed">Link</a>
                         </p>
-                        <p class="center fragment current-visible" style="position: absolute">
+                    </section>
+                    <section data-transition="none">
+                        <h3>Distributed non linear workflows</h3>
+                        <p class="center" style="position: absolute">
                             Integration Manager Workflow
                             <img src="https://git-scm.com/images/about/workflow-b@2x.png" height="500em" alt="Workflow B">
                             <br>
                             <a href="https://git-scm.com/about/distributed">Link</a>
                         </p>
-                        <p class="center fragment current-visible" style="position: absolute">
+                    </section>
+                    <section data-transition="none">
+                        <h3>Distributed non linear workflows</h3>
+                        <p class="center" style="position: absolute">
                             Dictator and Lieutenants Workflow
                             <img src="https://git-scm.com/images/about/workflow-c@2x.png" height="500em" alt="Workflow C">
                             <br>
@@ -126,8 +132,8 @@
                         </p>
                     </section>
                 </section>
-                <section>
-                    <section id="a-brief-history-of-git" class="titleslide slide level1">
+                <section data-transition="slide">
+                    <section id="a-brief-history-of-git" class="titleslide slide level1" data-transition="slide">
                         <h1>A brief history of Git</h1>
                     </section>
                     <section id="section-1" class="slide level2">
@@ -154,8 +160,9 @@
                     </section>
                 </section>
 
-                <section>
-                    <section id="so-really-what-is-git" class="titleslide slide level1"><h1>So really, what is Git?</h1>
+                <section data-transition="slide">
+                    <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
+                        <h1>So really, what is Git?</h1>
                     </section>
                     <section id="section-2" class="slide level2">
                     <h1></h1>
@@ -164,12 +171,14 @@
                     <li>git is not Dropbox</li>
                     <li>git is not svn</li>
                     </ul>
-                    </section><section id="cvs" class="slide level2">
+                    </section>
+                    <section id="cvs" class="slide level2">
                     <h1>CVS</h1>
                     <figure>
                     <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
                     </figure>
-                    </section><section id="git" class="slide level2">
+                    </section>
+                    <section id="git" class="slide level2">
                     <h1>Git</h1>
                     <figure>
                     <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
@@ -194,7 +203,7 @@
                     </section>
                 </section>
 
-                <section data-state="demo1-event">
+                <section data-state="demo1-event" data-transition="slide">
                     <div style="background-color: rgb(0, 0, 0); width: 100%; height: 400%; position: absolute; top: -100%; left: -45%; z-index: -1;"></div>
                         <div style="width: 50%; display: inline-block;">
                             <div class="fragment demo1-git-add" style="margin: 50px 0px;">
@@ -231,7 +240,7 @@
                         </div>
                 </section>
 
-                <section data-state="demo2-event">
+                <section data-state="demo2-event" data-transition="slide">
                     <div style="background-color: rgb(0, 0, 0); width: 100%; height: 400%; position: absolute; top: -100%; left: -45%; z-index: -1;"></div>
                         <div style="width: 50%; display: inline-block;">
                             <div class="fragment demo2-git-checkout-1" style="margin: 50px 0px;">
@@ -261,7 +270,7 @@
                         </div>
                 </section>
 
-                <section>
+                <section data-transition="slide">
                     <section id="configure" class="titleslide slide level1"><h1>Configure</h1></section><section id="section-3" class="slide level2">
                     <h1></h1>
                     <p><code>git config --global user.name &quot;&lt;name&gt;&quot;</code></p>
@@ -277,7 +286,7 @@
                     </section>
                 </section>
 
-                <section><section id="create" class="titleslide slide level1"><h1>Create</h1></section><section id="section-7" class="slide level2">
+                <section data-transition="slide"><section id="create" class="titleslide slide level1"><h1>Create</h1></section><section id="section-7" class="slide level2">
                 <h1></h1>
                 <p><code>git clone ssh://user@domain.com/repo.git</code></p>
                 </section><section id="section-8" class="slide level2">
