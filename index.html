@@ -37,6 +37,9 @@
                             <li>Supports multiple non linear workflows</li>
                             <li class="fragment current-visible"><b>Easy to learn</b></li>
                         </ul>
+                    <aside class="notes">
+                        Before you proceed, poll audience
+                    </aside>
                     </section>
                     <section class="slide level2" >
                         <h3>Free as in [beer, speech]</h3>
@@ -46,10 +49,16 @@
                             <br>
                             <a href="https://git-scm.com/" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        Free to download for Windows, OSX, Linux. Free to modify under the GNU General Public License version 2.
+                    </aside>
                     </section>
                     <section>
                     <h3>Small</h3>
                     The Mozilla project's CVS repository is about 3 GB; it's about 12 GB in Subversion's fsfs format. In Git it's around 300 MB.
+                    <aside class="notes">
+                        git repositories are usually smaller than CVS repository for the same source code and history. git is efficient at storing content and changes in content.
+                    </aside>
                     </section>
                     <section class="slide level2" >
                         <h3>Fast</h3>
@@ -99,6 +108,9 @@
                             </table>
                             <br>
                             <a href="https://git-scm.com/about/small-and-fast" data-preview-link>Link</a>
+                    <aside class="notes">
+                        git repositories are fast. Table above shows some comparisons of svn vs git. svn requires a central repository to operate, whereas git is entirely local. This means no network latencies. This also means a few other things, the entire project is on your local machine i.e. EVERYONE that has cloned the repository has the entire history of the project on their machine as well. Distributed backup. 
+                    </aside>
                     </section>
                     <section data-transition="none">
                         <h3>Distributed non linear workflows</h3>
@@ -108,6 +120,9 @@
                             <br>
                             <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        git allows you to use it the way you want. You can use it exactly like how you would svn.
+                    </aside>
                     </section>
                     <section data-transition="none">
                         <h3>Distributed non linear workflows</h3>
@@ -117,6 +132,9 @@
                             <br>
                             <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        git also allows you to pick and compile specific changes from anyone else that has made their repository public 
+                    </aside>
                     </section>
                     <section data-transition="none">
                         <h3>Distributed non linear workflows</h3>
@@ -126,6 +144,9 @@
                             <br>
                             <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        Workflow followed by Linux devs, where Linus has a repository on his local machine that no one else has access to.
+                    </aside>
                     </section>
                     <section id="section" class="slide level2">
                         <p class="center">
@@ -135,6 +156,9 @@
                             <br>
                             <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        This article goes through the steps one may attempt to create a version control system. In this hypothetical scenario one may start off by creating multiple folders as a backup. The final VCS that is arrived at is very similar to git. The author is the founder of GitHub
+                    </aside>
                     </section>
                 </section>
                 <section data-transition="slide">
@@ -154,20 +178,28 @@
                             <br>
                             <a href="https://github.com/git/git/blame/master/README" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        I ran `git blame` on the README in the git repository and I found Linus's commit in 2005 explaining why he calls this tool git
+                    </aside>
                     </section>
                     <section class="slide level2">
                         <p class="center">
-                            <Linus on why he created git>
                             <img src="img/git-2005-article.png" style="max-height: 15em;" alt="Article on Git in 2005">
                             <br>
                             <a href="http://www.pcworld.idg.com.au/article/129776/after_controversy_torvalds_begins_work_git_/" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        Linus on why he created git
+                    </aside>
                     </section>
                 </section>
 
                 <section data-transition="slide">
                     <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
                         <h1>So really, what is Git?</h1>
+                    <aside class="notes">
+                        We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content.
+                    </aside>
                     </section>
                     <section>
 <code>
@@ -214,6 +246,9 @@ concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
 </pre>
 </code>
+                    <aside class="notes">
+                        Pretty simple, right? All you have to do is memorize all the functions on this list and you will be set
+                    </aside>
 </section>
 <section>
 <code>
@@ -260,6 +295,9 @@ concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
 </pre>
 </code>
+                    <aside class="notes">
+                        Just kidding! git follows what is called onion programming. The top layer, what you see here, are what are called porcelain commands, and are probably the only ones you'll need to use. The layer below that is the plumbing commands and are what make up how git works. They are there if you need them, in case you want to dig deeper or if something goes terribly wrong. I've never had to use them in my experience.
+                    </aside>
 </section>
                     <section id="section-2" class="slide level2">
                     <h1></h1>
@@ -268,18 +306,28 @@ to read about a specific subcommand or concept.
                     <li>git is not Dropbox</li>
                     <li>git is not svn</li>
                     </ul>
+                    <aside class="notes">
+                        git is different from GitHub. GitHub a web service that host a public free remote copy of your repository. git is the toolkit that builds the repository. They are not the same, and there are loads of other places you can store your code remotely - gitlab, bitbucket etc. Why, you can even set up a computer in your home to act as a remote git server. 
+                        git is not Dropbox, and although it can be used for sharing word documents and pdfs, this may not be such a good idea - this will not scale well. git works best for text files. 
+                    </aside>
                     </section>
                     <section id="cvs" class="slide level2">
                     <h3>CVS</h3>
                     <figure>
                     <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png"  style="max-height: 10em;"  alt="" />
                     </figure>
+                    <aside class="notes">
+                        SVN stores differences in the form of deltas. 
+                    </aside>
                     </section>
                     <section id="git" class="slide level2">
                     <h3>Git</h3>
                     <figure>
                     <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png"  style="max-height: 10em;"  alt="" />
                     </figure>
+                    <aside class="notes">
+                        git however, stores snapshots. People often assume that git stores the differences between files, but that is not true. git tracks content and not files. The way git wins, is by reusing the same "blob" in different snapshots if the file has not changed. 
+                    </aside>
                     </section>
 
                     <section class="slide level2">
@@ -288,6 +336,10 @@ to read about a specific subcommand or concept.
                             <br>
                         <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        This is the structure of a single commit/snapshot. snapshot (unofficial)==commit(git internal object).
+                        Tree is like a directory and can link to other trees or blobs. blobs are like files.
+                    </aside>
                     </section>
                     <section class="slide level2">
                         <p class="center">
@@ -295,6 +347,10 @@ to read about a specific subcommand or concept.
                             <br>
                         <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        If the bottom file was modified, and committed to the repository in a new snapshot, git will still use the same blobs for unmodified files
+                        Let's say, at this point we also tag the snapshot. We now make a change to another file.
+                    </aside>
                     </section>
                     <section class="slide level2">
                         <p class="center">
@@ -302,17 +358,30 @@ to read about a specific subcommand or concept.
                             <br>
                         <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                         </p>
+                    <aside class="notes">
+                        Tags are labels. branch names are labels. HEAD is a label. These references point to a commit
+                    </aside>
                     </section>
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
                         <div style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
                             <h3 style="color: white;">demo</h3>
                         </div>
+                    <aside class="notes">
+                        .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
+├── b8
+│   └── fa28116ec360ae79b59da237ca991ab31a696e
+                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
+                    So, does this look like anything familiar.
+                    </aside>
                     </section>
                     <section id="network" data-state="network" class="slide level2">
                         Networks of commits
                         <figure>
                             <img src="img/git-flow.png"  style="max-height: 20em;"  alt=""/>
                         </figure>
+                    <aside class="notes">
+                        .git repository is a directed network graph
+                    </aside>
                     </section>
                     <section data-state="network" class="slide level2">
                         <h3>Tell your story</h3>
@@ -329,6 +398,9 @@ to read about a specific subcommand or concept.
                             <div >
                                 <svg id="demo0-chart"></svg>
                             </div>
+                    <aside class="notes">
+                        and like with any graph, you can choose to tell a story
+                    </aside>
                     </section>
                 </section>
                 <section data-transition="slide">
