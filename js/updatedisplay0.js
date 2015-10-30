@@ -1,7 +1,7 @@
 Reveal.addEventListener( 'network', function() {
     var vis = d3.select("#demo0-chart").style("padding-top", "100px").style("padding-bottom", "100px");
 
-    var h = 50*1.5*data_demo0_final.nodes.length;
+    var h = 50*1.5*data_demo0_1.nodes.length;
 
     var data = data_demo0_final;
     var scaleY = d3.scale.linear()
