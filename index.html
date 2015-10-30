@@ -99,7 +99,7 @@
                         <h3>Distributed non linear workflows</h3>
                         <p class="center" style="position: absolute">
                             Subversion-Style Workflow
-                            <img src="https://git-scm.com/images/about/workflow-a@2x.png" height="500em" alt="Workflow A">
+                            <img src="https://git-scm.com/images/about/workflow-a@2x.png"  style="max-height: 15em;"  alt="Workflow A">
                             <br>
                             <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
                         </p>
@@ -108,7 +108,7 @@
                         <h3>Distributed non linear workflows</h3>
                         <p class="center" style="position: absolute">
                             Integration Manager Workflow
-                            <img src="https://git-scm.com/images/about/workflow-b@2x.png" height="500em" alt="Workflow B">
+                            <img src="https://git-scm.com/images/about/workflow-b@2x.png"  style="max-height: 15em;"  alt="Workflow B">
                             <br>
                             <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
                         </p>
@@ -117,7 +117,7 @@
                         <h3>Distributed non linear workflows</h3>
                         <p class="center" style="position: absolute">
                             Dictator and Lieutenants Workflow
-                            <img src="https://git-scm.com/images/about/workflow-c@2x.png" height="500em" alt="Workflow C">
+                            <img src="https://git-scm.com/images/about/workflow-c@2x.png"  style="max-height: 15em;"  alt="Workflow C">
                             <br>
                             <a href="https://git-scm.com/about/distributed" data-preview-link>Link</a>
                         </p>
@@ -139,13 +139,13 @@
                     <section id="section-1" class="slide level2">
                         <ul>
                             <li><code>git</code> is British English slang for &quot;unpleasant person&quot;.</li>
-                            <li>Linus Torvalds' projects tend to be named after himself (e.g. Linux, git)</li>
+                            <p style="text-indent: 2em;"> - Linus Torvalds likes to name projects after himself</p>
                         </ul>
                     </section>
                     <section class="slide level2">
                         <p class="center">
                             <code>git blame README</code>
-                            <img src="img/git-readme.png" height=auto alt="git readme">
+                            <img src="img/git-readme.png" style="max-height: 15em;" alt="git readme">
                             <br>
                             <a href="https://github.com/git/git/blame/master/README" data-preview-link>Link</a>
                         </p>
@@ -153,7 +153,7 @@
                     <section class="slide level2">
                         <p class="center">
                             <Linus on why he created git>
-                            <img src="img/git-2005-article.png" height=auto alt="Article on Git in 2005">
+                            <img src="img/git-2005-article.png" style="max-height: 15em;" alt="Article on Git in 2005">
                             <br>
                             <a href="http://www.pcworld.idg.com.au/article/129776/after_controversy_torvalds_begins_work_git_/" data-preview-link>Link</a>
                         </p>
@@ -172,14 +172,106 @@
                     <li>git is not svn</li>
                     </ul>
                     </section>
+                    <section>
+<code>
+<pre style="font-size: .2em; width: auto">
+git help --all
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+available git commands in '/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core'
+
+  add                       clone                     fast-import               interpret-trailers        notes                     remote-testsvn            submodule
+  add--interactive          column                    fetch                     log                       p4                        repack                    subtree
+  am                        commit                    fetch-pack                ls-files                  pack-objects              replace                   svn
+  annotate                  commit-tree               filter-branch             ls-remote                 pack-redundant            request-pull              symbolic-ref
+  apply                     config                    fmt-merge-msg             ls-tree                   pack-refs                 rerere                    tag
+  archimport                count-objects             for-each-ref              mailinfo                  patch-id                  reset                     unpack-file
+  archive                   credential                format-patch              mailsplit                 prune                     rev-list                  unpack-objects
+  bisect                    credential-cache          fsck                      merge                     prune-packed              rev-parse                 update-index
+  bisect--helper            credential-cache--daemon  fsck-objects              merge-base                pull                      revert                    update-ref
+  blame                     credential-osxkeychain    gc                        merge-file                push                      rm                        update-server-info
+  branch                    credential-store          get-tar-commit-id         merge-index               quiltimport               send-email                upload-archive
+  bundle                    cvsexportcommit           grep                      merge-octopus             read-tree                 send-pack                 upload-pack
+  cat-file                  cvsimport                 gui--askpass              merge-one-file            rebase                    sh-i18n--envsubst         var
+  check-attr                cvsserver                 hash-object               merge-ours                receive-pack              shell                     verify-commit
+  check-ignore              daemon                    help                      merge-recursive           reflog                    shortlog                  verify-pack
+  check-mailmap             describe                  http-backend              merge-resolve             relink                    show                      verify-tag
+  check-ref-format          diff                      http-fetch                merge-subtree             remote                    show-branch               web--browse
+  checkout                  diff-files                http-push                 merge-tree                remote-ext                show-index                whatchanged
+  checkout-index            diff-index                imap-send                 mergetool                 remote-fd                 show-ref                  write-tree
+  cherry                    diff-tree                 index-pack                mktag                     remote-ftp                stage
+  cherry-pick               difftool                  init                      mktree                    remote-ftps               stash
+  citool                    difftool--helper          init-db                   mv                        remote-http               status
+  clean                     fast-export               instaweb                  name-rev                  remote-https              stripspace
+
+git commands available from elsewhere on your $PATH
+
+  loglive
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+</pre>
+</code>
+</section>
+<section>
+<code>
+<pre style="font-size: .2em; width: auto">
+git help --all
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+available git commands in '/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core'
+
+  add                       clone                                                                                                                             submodule
+  add--interactive                                    fetch                     log                                                                                                    
+  am                        commit                                                                                                                                                     
+  annotate                                                                                                                                                                             
+  apply                                                                                                                                                       tag
+                                                                                                                                    reset                                              
+  archive                                             format-patch                                                                                                                     
+  bisect                                                                        merge                                                                                                  
+  bisect--helper                                                                                          pull                      revert                                             
+  blame                                               gc                                                  push                      rm                                                 
+  branch                                                                                                                                                                               
+                                                      grep                                                                                                    
+                                                      gui--askpass                                        rebase                                              
+                                                                                                                                                              
+                            daemon                    help                                                reflog                                              
+                                                                                                                                                              
+                            diff                                                                          remote                                              
+  checkout                                                                                                                                                    
+                                                                                                                                                             
+                                                                                                                                                             
+  cherry-pick                                         init                                                                          stash
+                                                                                mv                                                  status
+  clean                                               instaweb                                                                                               
+
+git commands available from elsewhere on your $PATH
+
+  loglive
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+</pre>
+</code>
+</section>
                     <section id="cvs" class="slide level2">
-                    <h1>CVS</h1>
+                    <h3>CVS</h3>
                     <figure>
                     <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
                     </figure>
                     </section>
                     <section id="git" class="slide level2">
-                    <h1>Git</h1>
+                    <h3>Git</h3>
                     <figure>
                     <img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
                     </figure>
@@ -192,6 +284,21 @@
                         <figure>
                             <img src="img/git-flow.png" alt=""/>
                         </figure>
+                    </section>
+                    <section data-state="network" class="slide level2">
+                            <div class="fragment demo0-start" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-story-1" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-story-2" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-story-3" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-delete-merge" style="margin: 50px 0px;">
+                            </div>
+                        <div >
+                            <svg id="demo0-chart"></svg>
+                        </div>
                     </section>
                 </section>
                 
@@ -520,7 +627,9 @@
 
 		<script src="reveal.js/js/reveal.js"></script>
         <script src="js/data.js"></script>
+        <script src="js/data0.js"></script>
         <script src="js/updatedisplay.js"></script>
+        <script src="js/updatedisplay0.js"></script>
 
 	</body>
 </html>
