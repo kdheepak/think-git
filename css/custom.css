@@ -16,3 +16,13 @@ html.network img {
     opacity: 1;
     visibility: visible;
 }
+
+
+.reveal section img.no-shadow {
+    border: 5px solid #000;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+}
+
+.reveal a:hover img.no-shadow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
