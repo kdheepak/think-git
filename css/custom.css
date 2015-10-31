@@ -19,7 +19,7 @@ html.network img {
 
 
 .reveal section img.no-shadow {
-    border: 5px solid #000;
+    border: 0px solid #000;
     box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
 }
 
