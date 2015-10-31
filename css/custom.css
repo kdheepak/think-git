@@ -6,3 +6,13 @@ html.network img {
 .reveal section img {
     border: 0px solid #000;
 }
+
+.reveal .slides section .fragment.visible.hide-on-current-fragment {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.reveal .slides section .fragment.hide-on-current-fragment {
+    opacity: 1;
+    visibility: visible;
+}
