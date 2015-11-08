@@ -53,18 +53,6 @@
                     </section>
                     <section id="section" class="slide level2">
                         <p class="center">
-                            The Parable by Tom Preston-Werner (Founder of GitHub)
-                            <br>
-                            <img src="img/git-parable.png" alt="The Git Parable">
-                            <br>
-                            <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        This article goes through the steps one may attempt to create a version control system. In this hypothetical scenario one may start off by creating multiple folders as a backup. The final VCS that is arrived at is very similar to git. The author is the founder of GitHub
-                    </aside>
-                    </section>
-                    <section id="section" class="slide level2">
-                        <p class="center">
                             <br>
                             <img src="http://imgs.xkcd.com/comics/git.png" style="max-height: 15em">
                             <br>
@@ -76,23 +64,37 @@
                     </aside>
                     </section>
                     <section>
+                        <h3>git is a supplement to your workflow</h3>
+                    </section>
+                    <section>
                         <h3>Workflow</h3>
                         <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code></code></div>
-                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code style="background-color: rgba(0, 0, 0, .25); color: white; border-radius: 5em; padding: .25em" >git init</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code></code></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Edit files</div>
-                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="1"><code style="background-color: red; color: white; padding: .25em">$EDITOR</code></div>
+                        <div style="text-align: center; width: 45%; display: inline-block"></div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Group changes</div>
-                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="2"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git add</code></div>
+                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Group changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block"></div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Review changes</div>
+                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Review changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block">
-                            <code class="fragment" data-fragment-index="3" style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git status</code>
                         </div>
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
-                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="4"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
+                        <div style="text-align: center; width: 45%; display: inline-block"></div>
+                    </section>
+                    <section data-state="demo1-event" data-transition="none">
+                        <h3><code>git commit</code></h3>
+                                <div class="fragment demo1-start" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo1-git-commit-1" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo1-git-commit-2" style="margin: 50px 0px;">
+                                </div>
+                            <div >
+                                <svg id="demo1-chart"></svg>
+                            </div>
                     </section>
                     <section data-state="network" class="slide level2">
                         <h3>Tell your story</h3>
@@ -113,6 +115,293 @@
                         and like with any graph, you can choose to tell a story
                     </aside>
                     </section>
+                </section>
+
+                <section data-transition="slide">
+                    <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
+                        <h1>So really, what is Git?</h1>
+                    <aside class="notes">
+                        We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content.
+                    </aside>
+                    </section>
+                    <section>
+<code>
+<pre style="top: 25%; font-size: .2em; width: 100%">
+git help --all
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+available git commands in '/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core'
+
+  add                       clone                     fast-import               interpret-trailers        notes                     remote-testsvn            submodule
+  add--interactive          column                    fetch                     log                       p4                        repack                    subtree
+  am                        commit                    fetch-pack                ls-files                  pack-objects              replace                   svn
+  annotate                  commit-tree               filter-branch             ls-remote                 pack-redundant            request-pull              symbolic-ref
+  apply                     config                    fmt-merge-msg             ls-tree                   pack-refs                 rerere                    tag
+  archimport                count-objects             for-each-ref              mailinfo                  patch-id                  reset                     unpack-file
+  archive                   credential                format-patch              mailsplit                 prune                     rev-list                  unpack-objects
+  bisect                    credential-cache          fsck                      merge                     prune-packed              rev-parse                 update-index
+  bisect--helper            credential-cache--daemon  fsck-objects              merge-base                pull                      revert                    update-ref
+  blame                     credential-osxkeychain    gc                        merge-file                push                      rm                        update-server-info
+  branch                    credential-store          get-tar-commit-id         merge-index               quiltimport               send-email                upload-archive
+  bundle                    cvsexportcommit           grep                      merge-octopus             read-tree                 send-pack                 upload-pack
+  cat-file                  cvsimport                 gui--askpass              merge-one-file            rebase                    sh-i18n--envsubst         var
+  check-attr                cvsserver                 hash-object               merge-ours                receive-pack              shell                     verify-commit
+  check-ignore              daemon                    help                      merge-recursive           reflog                    shortlog                  verify-pack
+  check-mailmap             describe                  http-backend              merge-resolve             relink                    show                      verify-tag
+  check-ref-format          diff                      http-fetch                merge-subtree             remote                    show-branch               web--browse
+  checkout                  diff-files                http-push                 merge-tree                remote-ext                show-index                whatchanged
+  checkout-index            diff-index                imap-send                 mergetool                 remote-fd                 show-ref                  write-tree
+  cherry                    diff-tree                 index-pack                mktag                     remote-ftp                stage
+  cherry-pick               difftool                  init                      mktree                    remote-ftps               stash
+  citool                    difftool--helper          init-db                   mv                        remote-http               status
+  clean                     fast-export               instaweb                  name-rev                  remote-https              stripspace
+
+git commands available from elsewhere on your $PATH
+
+  loglive
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+</pre>
+</code>
+                    <aside class="notes">
+                        Pretty simple, right? All you have to do is memorize all the functions on this list and you will be set
+                    </aside>
+</section>
+<section>
+<code>
+<pre style="top: -25%; font-size: .2em; width: 100%">
+git help --all
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+available git commands in '/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core'
+
+  add                       clone                                                                                                                             submodule
+  add--interactive                                    fetch                     log
+  am                        commit
+  annotate
+  apply                                                                                                                                                       tag
+                                                                                                                                    reset
+  archive                                             format-patch
+  bisect                                                                        merge
+  bisect--helper                                                                                          pull                      revert
+  blame                                               gc                                                  push                      rm
+  branch
+                                                      grep
+                                                      gui--askpass                                        rebase
+
+                            daemon                    help                                                reflog
+
+                            diff                                                                          remote
+  checkout
+
+
+  cherry-pick                                         init                                                                          stash
+                                                                                mv                                                  status
+  clean                                               instaweb
+
+git commands available from elsewhere on your $PATH
+
+  loglive
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+</pre>
+</code>
+                    <aside class="notes">
+                        Just kidding! git follows what is called onion programming. The top layer, what you see here, are what are called porcelain commands, and are probably the only ones you'll need to use. The layer below that is the plumbing commands and are what make up how git works. They are there if you need them, in case you want to dig deeper or if something goes terribly wrong. I've never had to use them in my experience.
+                    </aside>
+</section>
+                    <section>
+                        <h3>Workflow</h3>
+                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="1"><code></code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="1"><code style="background-color: rgba(0, 0, 0, .25); color: white; border-radius: 5em; padding: .25em" >git init</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="1"><code></code></div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Edit files</div>
+                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="2"><code style="background-color: red; color: white; padding: .25em">$EDITOR</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
+                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Group changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="3"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git add</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
+                        <div style="text-align: left; width: 45%; display: inline-block" class="fragment" data-fragment-index="0">Review changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block">
+                            <code class="fragment" data-fragment-index="4" style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git status</code>
+                        </div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
+                    </section>
+
+                    <section class="slide level2">
+                        <p class="center">
+                        <img src="img/commit-1.svg"  style="max-height: 15em;"  alt="commit structure">
+                            <br>
+                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        This is the structure of a single commit/snapshot. snapshot (unofficial)==commit(git internal object).
+                        Tree is like a directory and can link to other trees or blobs. blobs are like files.
+                    </aside>
+                    </section>
+                    <section class="slide level2">
+                        <p class="center">
+                        <img src="img/commit-2.svg"  style="max-height: 15em;"  alt="commit structure">
+                            <br>
+                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        If the bottom file was modified, and committed to the repository in a new snapshot, git will still use the same blobs for unmodified files
+                        Let's say, at this point we also tag the snapshot. We now make a change to another file.
+                    </aside>
+                    </section>
+                    <section class="slide level2">
+                        <p class="center">
+                        <img src="img/commit-3.svg"  style="max-height: 15em;"  alt="commit structure">
+                            <br>
+                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        Tags are labels. branch names are labels. HEAD is a label. These references point to a commit
+                    </aside>
+                    </section>
+                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
+                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
+                            <h3 style="color: white;">demo</h3>
+                        </div>
+                    <aside class="notes">
+                        .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
+├── b8
+│   └── fa28116ec360ae79b59da237ca991ab31a696e
+                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
+                    So, does this look like anything familiar.
+                    </aside>
+                    </section>
+                    <section id="network" data-state="network" class="slide level2">
+                        Network of commits
+                        <figure>
+                            <img src="img/git-flow.png"  style="max-height: 15em;"  alt=""/>
+                        </figure>
+                    <aside class="notes">
+                        .git repository is a directed network graph
+                    </aside>
+                    </section>
+                    <section>
+                            <p class="center">
+                            <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
+                                <br>
+                            <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                            </p>
+                    </section>
+                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-demo.mov?raw=true" data-background-color="#000000">
+                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
+                            <h3 style="color: white;">demo</h3>
+                        </div>
+                    </section>
+                </section>
+                <section data-transition="slide">
+                    <section><h1>Visual examples</h1></section>
+                    <section data-state="demo2-event" data-transition="none">
+                        <h3><code>git branch feature</code></h3>
+                                <div class="fragment demo2-start" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo2-git-branch" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo2-git-commit" style="margin: 50px 0px;">
+                                </div>
+                            <div >
+                                <svg id="demo2-chart"></svg>
+                            </div>
+                    </section>
+                    <section data-state="demo3-event" data-transition="none">
+                        <h3><code>git checkout -b feature</code></h3>
+                                <div class="fragment demo3-start" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo3-git-checkout-b" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo3-git-commit-0" style="margin: 50px 0px;">
+                                </div>
+                            <div>
+                                <svg id="demo3-chart"></svg>
+                            </div>
+                    </section>
+                    <section data-state="demo4-event" data-transition="none">
+                        <h3><code>git merge master</code></h3>
+                                <div class="fragment demo4-start" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo4-git-fetch" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo4-git-merge" style="margin: 50px 0px;">
+                                </div>
+                            <div >
+                                <svg id="demo4-chart"></svg>
+                            </div>
+                    </section>
+                    <section data-state="demo5-event" data-transition="none">
+                        <h3><code>git rebase master</code></h3>
+                                <div class="fragment demo5-start" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo5-git-fetch" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo5-git-rebase-1" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo5-git-rebase-2" style="margin: 50px 0px;">
+                                </div>
+                            <div >
+                                <svg id="demo5-chart"></svg>
+                            </div>
+                    </section>
+                    <section data-state="demo5-event" data-transition="none">
+                        <h3><code>git pull = git fetch + git merge</code></h3>
+                    </section>
+                </section>
+
+                <section data-transition="slide">
+                    <section data-transition="slide">
+                    <h1>Best practices</h1>
+                    </section>
+                    <section id="commit-related-changes" class="slide level2">
+                        <h3>Commit related changes</h3>
+                    </section>
+                    <section id="commit-often" class="slide level2">
+                        <h3>Commit often</h3>
+                    </section>
+                    <section id="branches-are-inexpensive" class="slide level2">
+                        <h3>Branches are inexpensive</h3>
+                    </section>
+                    <section id="commit-only-if-tests-pass" class="slide level2">
+                        <h3>Push only if tests pass</h3>
+                    </section>
+                    <section id="write-good-commit-messages" class="slide level2">
+                        <h3>Write good commit messages!</h3>
+                    </section>
+                    <section id="discuss-workflow-with-team" class="slide level2">
+                        <h3>Discuss workflow with team</h3>
+                    </section>
+                    <section>
+                        <h3>Less of this and more of this</h3>
+                        <p class="center" style="position: absolute">
+                            <img src="img/git-history.png" alt="git-history">
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h3>Source code for this presentation</h3>
+                    <p class="center">
+                    <a href="https://github.com/kdheepak89/think-git"><img class="no-shadow" style="border-radius: 50px; max-height: 2em; margin-top: 5em;" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="git-repo"></a>
+                    </p>
+                </section>
+                <section>
+                    <section class="titleslide slide level1" data-transition="slide"><h1>Advantages of git</h1></section>
                     <section id="section" class="slide level2">
                         <h1></h1>
                         <ul>
@@ -235,145 +524,6 @@
                         Workflow followed by Linux devs, where Linus has a repository on his local machine that no one else has access to.
                     </aside>
                     </section>
-                </section>
-                <section data-transition="slide">
-                    <section id="a-brief-history-of-git" class="titleslide slide level1" data-transition="slide">
-                        <h1>A brief history of Git</h1>
-                    </section>
-                    <section id="section-1" class="slide level2">
-                        <ul>
-                            <li><code>git</code> is British English slang for &quot;unpleasant person&quot;.</li>
-                            <p style="text-indent: 2em;"> - Linus Torvalds likes to name projects after himself</p>
-                        </ul>
-                    </section>
-                    <section class="slide level2">
-                        <p class="center">
-                            <code>git blame README</code>
-                            <img src="img/git-readme.png" style="max-height: 15em;" alt="git readme">
-                            <br>
-                            <a href="https://github.com/git/git/blame/master/README" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        I ran `git blame` on the README in the git repository and I found Linus's commit in 2005 explaining why he calls this tool git
-                    </aside>
-                    </section>
-                    <section class="slide level2">
-                        <p class="center">
-                            <img src="img/git-2005-article.png" style="max-height: 15em;" alt="Article on Git in 2005">
-                            <br>
-                            <a href="http://www.pcworld.idg.com.au/article/129776/after_controversy_torvalds_begins_work_git_/" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        Linus on why he created git
-                    </aside>
-                    </section>
-                </section>
-
-                <section data-transition="slide">
-                    <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
-                        <h1>So really, what is Git?</h1>
-                    <aside class="notes">
-                        We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content.
-                    </aside>
-                    </section>
-                    <section>
-<code>
-<pre style="top: 25%; font-size: .2em; width: 100%">
-git help --all
-usage: git [--version] [--help] [-C <path>] [-c name=value]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           <command> [<args>]
-
-available git commands in '/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core'
-
-  add                       clone                     fast-import               interpret-trailers        notes                     remote-testsvn            submodule
-  add--interactive          column                    fetch                     log                       p4                        repack                    subtree
-  am                        commit                    fetch-pack                ls-files                  pack-objects              replace                   svn
-  annotate                  commit-tree               filter-branch             ls-remote                 pack-redundant            request-pull              symbolic-ref
-  apply                     config                    fmt-merge-msg             ls-tree                   pack-refs                 rerere                    tag
-  archimport                count-objects             for-each-ref              mailinfo                  patch-id                  reset                     unpack-file
-  archive                   credential                format-patch              mailsplit                 prune                     rev-list                  unpack-objects
-  bisect                    credential-cache          fsck                      merge                     prune-packed              rev-parse                 update-index
-  bisect--helper            credential-cache--daemon  fsck-objects              merge-base                pull                      revert                    update-ref
-  blame                     credential-osxkeychain    gc                        merge-file                push                      rm                        update-server-info
-  branch                    credential-store          get-tar-commit-id         merge-index               quiltimport               send-email                upload-archive
-  bundle                    cvsexportcommit           grep                      merge-octopus             read-tree                 send-pack                 upload-pack
-  cat-file                  cvsimport                 gui--askpass              merge-one-file            rebase                    sh-i18n--envsubst         var
-  check-attr                cvsserver                 hash-object               merge-ours                receive-pack              shell                     verify-commit
-  check-ignore              daemon                    help                      merge-recursive           reflog                    shortlog                  verify-pack
-  check-mailmap             describe                  http-backend              merge-resolve             relink                    show                      verify-tag
-  check-ref-format          diff                      http-fetch                merge-subtree             remote                    show-branch               web--browse
-  checkout                  diff-files                http-push                 merge-tree                remote-ext                show-index                whatchanged
-  checkout-index            diff-index                imap-send                 mergetool                 remote-fd                 show-ref                  write-tree
-  cherry                    diff-tree                 index-pack                mktag                     remote-ftp                stage
-  cherry-pick               difftool                  init                      mktree                    remote-ftps               stash
-  citool                    difftool--helper          init-db                   mv                        remote-http               status
-  clean                     fast-export               instaweb                  name-rev                  remote-https              stripspace
-
-git commands available from elsewhere on your $PATH
-
-  loglive
-
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-</pre>
-</code>
-                    <aside class="notes">
-                        Pretty simple, right? All you have to do is memorize all the functions on this list and you will be set
-                    </aside>
-</section>
-<section>
-<code>
-<pre style="top: -25%; font-size: .2em; width: 100%">
-git help --all
-usage: git [--version] [--help] [-C <path>] [-c name=value]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           <command> [<args>]
-
-available git commands in '/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core'
-
-  add                       clone                                                                                                                             submodule
-  add--interactive                                    fetch                     log
-  am                        commit
-  annotate
-  apply                                                                                                                                                       tag
-                                                                                                                                    reset
-  archive                                             format-patch
-  bisect                                                                        merge
-  bisect--helper                                                                                          pull                      revert
-  blame                                               gc                                                  push                      rm
-  branch
-                                                      grep
-                                                      gui--askpass                                        rebase
-
-                            daemon                    help                                                reflog
-
-                            diff                                                                          remote
-  checkout
-
-
-  cherry-pick                                         init                                                                          stash
-                                                                                mv                                                  status
-  clean                                               instaweb
-
-git commands available from elsewhere on your $PATH
-
-  loglive
-
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-</pre>
-</code>
-                    <aside class="notes">
-                        Just kidding! git follows what is called onion programming. The top layer, what you see here, are what are called porcelain commands, and are probably the only ones you'll need to use. The layer below that is the plumbing commands and are what make up how git works. They are there if you need them, in case you want to dig deeper or if something goes terribly wrong. I've never had to use them in my experience.
-                    </aside>
-</section>
                     <section id="section-2" class="slide level2">
                     <h1></h1>
                     <ul>
@@ -404,195 +554,48 @@ to read about a specific subcommand or concept.
                         git however, stores snapshots. People often assume that git stores the differences between files, but that is not true. git tracks content and not files. The way git wins, is by reusing the same "blob" in different snapshots if the file has not changed. 
                     </aside>
                     </section>
-
-                    <section class="slide level2">
-                        <p class="center">
-                        <img src="img/commit-1.svg"  style="max-height: 15em;"  alt="commit structure">
-                            <br>
-                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        This is the structure of a single commit/snapshot. snapshot (unofficial)==commit(git internal object).
-                        Tree is like a directory and can link to other trees or blobs. blobs are like files.
-                    </aside>
-                    </section>
-                    <section class="slide level2">
-                        <p class="center">
-                        <img src="img/commit-2.svg"  style="max-height: 15em;"  alt="commit structure">
-                            <br>
-                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        If the bottom file was modified, and committed to the repository in a new snapshot, git will still use the same blobs for unmodified files
-                        Let's say, at this point we also tag the snapshot. We now make a change to another file.
-                    </aside>
-                    </section>
-                    <section class="slide level2">
-                        <p class="center">
-                        <img src="img/commit-3.svg"  style="max-height: 15em;"  alt="commit structure">
-                            <br>
-                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        Tags are labels. branch names are labels. HEAD is a label. These references point to a commit
-                    </aside>
-                    </section>
-                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
-                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
-                            <h3 style="color: white;">demo</h3>
-                        </div>
-                    <aside class="notes">
-                        .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
-├── b8
-│   └── fa28116ec360ae79b59da237ca991ab31a696e
-                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
-                    So, does this look like anything familiar.
-                    </aside>
-                    </section>
-                    <section id="network" data-state="network" class="slide level2">
-                        Networks of commits
-                        <figure>
-                            <img src="img/git-flow.png"  style="max-height: 15em;"  alt=""/>
-                        </figure>
-                    <aside class="notes">
-                        .git repository is a directed network graph
-                    </aside>
-                    </section>
-                </section>
-                <section data-transition="slide">
-                    <section data-transition="slide">
-                        <h1>Workflow</h1>
-                    </section>
-                    <section>
-                            <p class="center">
-                            <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
-                                <br>
-                            <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
-                            </p>
-                    </section>
-                    <section>
-                        <h3>Structure</h3>
-                        <div style="text-align: center; width: 45%; display: inline-block; padding-top: 2.5em; padding-bottom: 0em; " class="fragment" data-fragment-index="0">
-                            Working directory - files
-                        </div>
-                        <div style="text-align: center; width: 45%; display: inline-block; padding-top: 2.5em; padding-bottom: 0em; " class="fragment" data-fragment-index="3">
-                            Repository
-                        </div>
-                        <div style="text-align: center; width: 45%; display: inline-block; padding-top: 2.5em; padding-bottom: 0em; " class="fragment" data-fragment-index="1">
-                            diff between working directory and staged
-                        </div>
-                        <div style="text-align: center; width: 45%; display: inline-block; padding-top: 2.5em; padding-bottom: 0em;" class="fragment" data-fragment-index="2">
-                            diff between staged and HEAD
-                        </div>
-                    </section>
-                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-demo.mov?raw=true" data-background-color="#000000">
-                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
-                            <h3 style="color: white;">demo</h3>
-                        </div>
-                    </section>
-                </section>
-                <section data-transition="slide">
-                    <section data-state="demo1-event" data-transition="none">
-                        <h3><code>git commit</code></h3>
-                                <div class="fragment demo1-start" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo1-git-commit-1" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo1-git-commit-2" style="margin: 50px 0px;">
-                                </div>
-                            <div >
-                                <svg id="demo1-chart"></svg>
-                            </div>
-                    </section>
-                    <section data-state="demo2-event" data-transition="none">
-                        <h3><code>git branch feature</code></h3>
-                                <div class="fragment demo2-start" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo2-git-branch" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo2-git-commit" style="margin: 50px 0px;">
-                                </div>
-                            <div >
-                                <svg id="demo2-chart"></svg>
-                            </div>
-                    </section>
-                    <section data-state="demo3-event" data-transition="none">
-                        <h3><code>git checkout -b feature</code></h3>
-                                <div class="fragment demo3-start" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo3-git-checkout-b" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo3-git-commit-0" style="margin: 50px 0px;">
-                                </div>
-                            <div>
-                                <svg id="demo3-chart"></svg>
-                            </div>
-                    </section>
-                    <section data-state="demo4-event" data-transition="none">
-                        <h3><code>git merge master</code></h3>
-                                <div class="fragment demo4-start" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo4-git-fetch" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo4-git-merge" style="margin: 50px 0px;">
-                                </div>
-                            <div >
-                                <svg id="demo4-chart"></svg>
-                            </div>
-                    </section>
-                    <section data-state="demo5-event" data-transition="none">
-                        <h3><code>git rebase master</code></h3>
-                                <div class="fragment demo5-start" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo5-git-fetch" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo5-git-rebase-1" style="margin: 50px 0px;">
-                                </div>
-                                <div class="fragment demo5-git-rebase-2" style="margin: 50px 0px;">
-                                </div>
-                            <div >
-                                <svg id="demo5-chart"></svg>
-                            </div>
-                    </section>
-                    <section data-state="demo5-event" data-transition="none">
-                        <h3><code>git pull = git fetch + git merge</code></h3>
-                    </section>
                 </section>
 
-                <section data-transition="slide">
-                    <section data-transition="slide">
-                    <h1>Best practices</h1>
-                    </section>
-                    <section id="commit-related-changes" class="slide level2">
-                        <h3>Commit related changes</h3>
-                    </section>
-                    <section id="commit-often" class="slide level2">
-                        <h3>Commit often</h3>
-                    </section>
-                    <section id="branches-are-inexpensive" class="slide level2">
-                        <h3>Branches are inexpensive</h3>
-                    </section>
-                    <section id="commit-only-if-tests-pass" class="slide level2">
-                        <h3>Push only if tests pass</h3>
-                    </section>
-                    <section id="write-good-commit-messages" class="slide level2">
-                        <h3>Write good commit messages!</h3>
-                    </section>
-                    <section id="discuss-workflow-with-team" class="slide level2">
-                        <h3>Discuss workflow with team</h3>
-                    </section>
-                    <section>
-                        <h3>Less of this and more of this</h3>
-                        <p class="center" style="position: absolute">
-                            <img src="img/git-history.png" alt="git-history">
-                        </p>
-                    </section>
-                </section>
                 <section>
-                    <h3>Source code for this presentation</h3>
-                    <p class="center">
-                    <a href="https://github.com/kdheepak89/think-git"><img class="no-shadow" style="border-radius: 50px; max-height: 2em; margin-top: 5em;" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="git-repo"></a>
-                    </p>
+                    <section id="a-brief-history-of-git" class="titleslide slide level1" data-transition="slide">
+                        <h1>A brief history of Git</h1>
+                    </section>
+                    <section id="section-1" class="slide level2">
+                        <ul>
+                            <li><code>git</code> is British English slang for &quot;unpleasant person&quot;.</li>
+                            <p style="text-indent: 2em;"> - Linus Torvalds likes to name projects after himself</p>
+                        </ul>
+                    </section>
+                    <section id="section" class="slide level2">
+                        <p class="center">
+                            The Parable by Tom Preston-Werner (Founder of GitHub)
+                            <br>
+                            <img src="img/git-parable.png" alt="The Git Parable">
+                            <br>
+                            <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        This article goes through the steps one may attempt to create a version control system. In this hypothetical scenario one may start off by creating multiple folders as a backup. The final VCS that is arrived at is very similar to git. The author is the founder of GitHub
+                    </aside>
+                    </section>
+                    <section class="slide level2">
+                        <p class="center">
+                            <code>git blame README</code>
+                            <img src="img/git-readme.png" style="max-height: 15em;" alt="git readme">
+                            <br>
+                            <a href="https://github.com/git/git/blame/master/README" data-preview-link>Link</a>
+                        </p>
+                    </section>
+                    <section class="slide level2">
+                        <p class="center">
+                            <img src="img/git-2005-article.png" style="max-height: 15em;" alt="Article on Git in 2005">
+                            <br>
+                            <a href="http://www.pcworld.idg.com.au/article/129776/after_controversy_torvalds_begins_work_git_/" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        Linus on why he created git
+                    </aside>
+                    </section>
                 </section>
 
 			</div>
