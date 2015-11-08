@@ -20,24 +20,97 @@
             <div class="slides">
 
                 <section data-state="title-event"  data-transition="slide">
-                  <h1 class="title">Think Git</h1>
+                  <h1 class="title">think git</h1>
                     <div id="divchart">
                         <svg id="title-chart"></svg>
                     </div>
+                    <aside class="notes">
+                        This talk is about the software git
+                    </aside>
                 </section>
 
                 <section data-transition="slide">
-                    <section id="what-is-git" class="titleslide slide level1" data-transition="slide"><h1>What is Git?</h1></section>
-                    <section id="section" class="slide level2">
-                        <li>Version control tool</li>
+                    <section id="what-is-git" class="titleslide slide level1" data-transition="slide"><h1>What is git?</h1>
                     <aside class="notes">
-                        Talk about why this is necessary
+                        Most you have have probably heard of git, but if you haven't -
+                        git is a version control tool. It's just a fancy way of saying you track what changes you are making to a file. You've probably used a version control tool. 
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
-                        <img src="http://imgs.xkcd.com/comics/git.png" style="max-height: 15em">
+                        <p class="center">
+                            <br>
+                            <img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" style="max-height: 15em">
+                            <br>
+                            <a href="http://www.phdcomics.com/comics/archive/phd101212s.gif" data-preview-link>Link</a>
+                        </p>
                     <aside class="notes">
-                        When I started working on this talk, I was wondering if there would be a revelant xkcd comic. And just days into my preparation of the slides this comic comes out. I just had to come up with an excuse to include it
+                        How many of you have worked on a paper collaborating with someone.
+                        You have all these versions of the same file that you have to keep track of. If someone wants to delete a paragraph, you keep a copy of the old version just in case and before you know it you have like 10 versions floating out there.
+                        One of the better problems I've found is merging changes from multiple people
+                        In software development, this is critical. Developers experiment with features and this should not affect 
+                        Multiple people can work on the same file, the same line at the same time
+                    </aside>
+                    </section>
+                    <section id="section" class="slide level2">
+                        <p class="center">
+                            The Parable by Tom Preston-Werner (Founder of GitHub)
+                            <br>
+                            <img src="img/git-parable.png" alt="The Git Parable">
+                            <br>
+                            <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        This article goes through the steps one may attempt to create a version control system. In this hypothetical scenario one may start off by creating multiple folders as a backup. The final VCS that is arrived at is very similar to git. The author is the founder of GitHub
+                    </aside>
+                    </section>
+                    <section id="section" class="slide level2">
+                        <p class="center">
+                            <br>
+                            <img src="http://imgs.xkcd.com/comics/git.png" style="max-height: 15em">
+                            <br>
+                            <a href="http://imgs.xkcd.com/comics/git.png" data-preview-link>Link</a>
+                        </p>
+                    <aside class="notes">
+                        git helps solve these problems. git contains a graph of all your change that helps you collaborate on projects. But, unfortunately you have to understand how it works to use it effectively.
+                        Most people when introduced to git, are thrown into using it, and if something unknown occurs, they don't really know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'll introduce the working of git so that you can identify when these problems occur, what these problems are and how to solve them. With this understanding you can become a git master.
+                    </aside>
+                    </section>
+                    <section>
+                        <h3>Workflow</h3>
+                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code></code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code style="background-color: rgba(0, 0, 0, .25); color: white; border-radius: 5em; padding: .25em" >git init</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code></code></div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Edit files</div>
+                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="1"><code style="background-color: red; color: white; padding: .25em">$EDITOR</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Group changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="2"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git add</code></div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Review changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block">
+                            <code class="fragment" data-fragment-index="3" style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git status</code>
+                        </div>
+                        <div style="text-align: center; width: 100%; display: inline-block"></div>
+                        <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
+                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="4"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
+                    </section>
+                    <section data-state="network" class="slide level2">
+                        <h3>Tell your story</h3>
+                            <div class="fragment demo0-start" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-story-1" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-story-2" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-story-3" style="margin: 50px 0px;">
+                            </div>
+                            <div class="fragment demo0-git-delete-merge" style="margin: 50px 0px;">
+                            </div>
+                            <div >
+                                <svg id="demo0-chart"></svg>
+                            </div>
+                    <aside class="notes">
+                        and like with any graph, you can choose to tell a story
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
@@ -50,7 +123,9 @@
                             <li class="fragment current-visible"><b>Easy to learn</b></li>
                         </ul>
                     <aside class="notes">
-                        Before you proceed, poll audience
+                        git is free, fast, secure and support different workflows.
+                        Hit SPC
+                        And most importantly it is easy to learn
                     </aside>
                     </section>
                     <section class="slide level2" >
@@ -158,18 +233,6 @@
                         </p>
                     <aside class="notes">
                         Workflow followed by Linux devs, where Linus has a repository on his local machine that no one else has access to.
-                    </aside>
-                    </section>
-                    <section id="section" class="slide level2">
-                        <p class="center">
-                            The Git Parable by Tom Preston-Werner (Founder of GitHub)
-                            <br>
-                            <img src="img/git-parable.png" alt="The Git Parable">
-                            <br>
-                            <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        This article goes through the steps one may attempt to create a version control system. In this hypothetical scenario one may start off by creating multiple folders as a backup. The final VCS that is arrived at is very similar to git. The author is the founder of GitHub
                     </aside>
                     </section>
                 </section>
@@ -395,48 +458,10 @@ to read about a specific subcommand or concept.
                         .git repository is a directed network graph
                     </aside>
                     </section>
-                    <section data-state="network" class="slide level2">
-                        <h3>Tell your story</h3>
-                            <div class="fragment demo0-start" style="margin: 50px 0px;">
-                            </div>
-                            <div class="fragment demo0-git-story-1" style="margin: 50px 0px;">
-                            </div>
-                            <div class="fragment demo0-git-story-2" style="margin: 50px 0px;">
-                            </div>
-                            <div class="fragment demo0-git-story-3" style="margin: 50px 0px;">
-                            </div>
-                            <div class="fragment demo0-git-delete-merge" style="margin: 50px 0px;">
-                            </div>
-                            <div >
-                                <svg id="demo0-chart"></svg>
-                            </div>
-                    <aside class="notes">
-                        and like with any graph, you can choose to tell a story
-                    </aside>
-                    </section>
                 </section>
                 <section data-transition="slide">
                     <section data-transition="slide">
                         <h1>Workflow</h1>
-                    </section>
-                    <section>
-                        <h3>Workflow</h3>
-                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code></code></div>
-                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code style="background-color: rgba(0, 0, 0, .25); color: white; border-radius: 5em; padding: .25em" >git init</code></div>
-                        <div style="text-align: center; width: 100%; display: inline-block" class="fragment" data-fragment-index="0"><code></code></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Edit files</div>
-                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="1"><code style="background-color: red; color: white; padding: .25em">$EDITOR</code></div>
-                        <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Group changes</div>
-                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="2"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git add</code></div>
-                        <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Review changes</div>
-                        <div style="text-align: center; width: 45%; display: inline-block">
-                            <code class="fragment" data-fragment-index="3" style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git status</code>
-                        </div>
-                        <div style="text-align: center; width: 100%; display: inline-block"></div>
-                        <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
-                        <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="4"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
                     </section>
                     <section>
                             <p class="center">
