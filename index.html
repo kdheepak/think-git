@@ -263,7 +263,7 @@ to read about a specific subcommand or concept.
                     </section>
                     <section>
                             <p class="center">
-                            <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
+                            <img src="img/local.png"  style="max-height: 15em;"  alt="git operations">
                                 <br>
                             <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                             </p>
@@ -297,7 +297,7 @@ to read about a specific subcommand or concept.
                         <p class="center">
                         <img src="img/commit-2.svg"  style="max-height: 15em;"  alt="commit structure">
                             <br>
-                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                        <a href="https://git-scm.com/blog/2011/07/11/reset.html" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
                         If the bottom file was modified, and committed to the repository in a new snapshot, git will still use the same blobs for unmodified files
@@ -375,8 +375,35 @@ to read about a specific subcommand or concept.
                 </section>
 
                 <section data-transition="slide">
+                    <section><h1>Remote</h1></section>
+                    <section>
+                            <p class="center">
+                            <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
+                                <br>
+                            <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                            </p>
+                            <aside class="notes">Everything we've seen so far has been local. </aside>
+                    </section>
+                    <section data-state="demo5-event" data-transition="none">
+                        <h3><code>git pull = git fetch + git merge</code></h3>
+                    </section>
+                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
+                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
+                            <h3 style="color: white;">demo</h3>
+                        </div>
+                    <aside class="notes">
+                    </aside>
+                    </section>
+                    <section>
+                        <h1>Big idea #4</h1>
+                        Remote is special branch, but a branch nonetheless
+                    </section>
+
+                </section>
+
+                <section data-transition="slide">
                     <section data-transition="slide">
-                    <h1>Clean history</h1>
+                    <h1>Changing history</h1>
                     </section>
                     <section data-state="demo5-event" data-transition="none">
                         <h3><code>git rebase master</code></h3>
@@ -392,8 +419,37 @@ to read about a specific subcommand or concept.
                                 <svg id="demo5-chart"></svg>
                             </div>
                     </section>
-                    <section data-state="demo5-event" data-transition="none">
-                        <h3><code>git pull = git fetch + git merge</code></h3>
+                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
+                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
+                            <h3 style="color: white;">demo</h3>
+                        </div>
+                    <aside class="notes">
+                    </aside>
+                    </section>
+                    <section>
+                        <h1>Big idea #5</h1>
+                        Treat remote commits as set stone
+                    </section>
+                </section>
+
+                <section data-transition="slide">
+                    <section data-transition="slide">
+                    <h1>Review of big ideas</h1>
+                    </section>
+                    <section id="commit-related-changes" class="slide level2">
+                        <h3>git history is a graph</h3>
+                    </section>
+                    <section id="commit-often" class="slide level2">
+                        <h3>Difference between working directory, staging area and .git repository</h3>
+                    </section>
+                    <section id="branches-are-inexpensive" class="slide level2">
+                        <h3>Branches are just labels</h3>
+                    </section>
+                    <section id="commit-only-if-tests-pass" class="slide level2">
+                        <h3>Remote is a branch too</h3>
+                    </section>
+                    <section id="write-good-commit-messages" class="slide level2">
+                        <h3>Local history is whatever you make it</h3>
                     </section>
                 </section>
 
@@ -431,6 +487,9 @@ to read about a specific subcommand or concept.
                     <p class="center">
                     <a href="https://github.com/kdheepak89/think-git"><img class="no-shadow" style="border-radius: 50px; max-height: 2em; margin-top: 5em;" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="git-repo"></a>
                     </p>
+                </section>
+                <section>
+                    <h3>Additional slides</h3>
                 </section>
                 <section>
                     <section class="titleslide slide level1" data-transition="slide"><h1>Advantages of git</h1></section>
