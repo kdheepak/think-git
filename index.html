@@ -44,11 +44,10 @@
                             <a href="http://www.phdcomics.com/comics/archive/phd101212s.gif" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
-                        How many of you have worked on a paper collaborating with someone.
-                        You have all these versions of the same file that you have to keep track of. If someone wants to delete a paragraph, you keep a copy of the old version just in case and before you know it you have like 10 versions floating out there.
-                        One of the better problems I've found is merging changes from multiple people
-                        In software development, this is critical. Developers experiment with features and this should not affect 
-                        Multiple people can work on the same file, the same line at the same time
+                        If you've ever worked on a paper using Word, you've probably done this. The reason one typically does this is because they like having a backup of all their past changes. If someone wants to delete a paragraph, you keep a copy of the old version just in case and before you know it you have like 10 versions floating out there.
+                        If you are collaborating with someone, this becomes more challenging. Tracking changes and merging content added by different people is time consuming.
+                        As you can imagine, this presents a problem in software development. Additionally, developers frequently experiment with features and this should never affect the "master" copy of the project
+                        It is likely that multiple people will work on the same file sometimes even at the same time.
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
@@ -59,12 +58,13 @@
                             <a href="http://imgs.xkcd.com/comics/git.png" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
-                        git helps solve these problems. git contains a graph of all your change that helps you collaborate on projects. But, unfortunately you have to understand how it works to use it effectively.
-                        Most people when introduced to git, are thrown into using it, and if something unknown occurs, they don't really know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'll introduce the working of git so that you can identify when these problems occur, what these problems are and how to solve them. With this understanding you can become a git master.
+                        git to the rescue! Essentially what git does, is that it contains a graph of all the changes you have made to every file in the project. But, unfortunately you have to understand how it works to use it effectively.
+                        Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'd like to introduce 3 big ideas that will help you understand how git works.
                     </aside>
                     </section>
                     <section>
                         <h3>git is a supplement to your workflow</h3>
+                        <aside class="notes">The first thing to understand is that git is a supplement to your current workflow. You can work the way you usually work, and all you have to do is use git every time you want to save your progress</aside>
                     </section>
                     <section>
                         <h3>Workflow</h3>
@@ -83,6 +83,7 @@
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
+                        <aside class="notes">This is a simple example of a workflow. You edit a file and you save the file. SPC. You can use any editor/IDE to modify a file. SPC. And instead of only just saving, you have to perform this additional command - git commit </aside>
                     </section>
                     <section data-state="demo1-event" data-transition="none">
                         <h3><code>git commit</code></h3>
@@ -95,6 +96,9 @@
                             <div >
                                 <svg id="demo1-chart"></svg>
                             </div>
+                        <aside class="notes">
+                        So, when you "commit" a file, what git does is create a snapshot. A snapshot contains the current state of the file. You can create snapshots as often as you like, as you add incremental changes to a file. And every snapshot is connected to its "parent" or previous snapshot. This, as you can imagine, forms a graph
+                        </aside>
                     </section>
                     <section data-state="network" class="slide level2">
                         <h3>What's your story</h3>
@@ -112,7 +116,7 @@
                                 <svg id="demo0-chart"></svg>
                             </div>
                     <aside class="notes">
-                        and like with any graph, you can choose to tell a story
+                        and like with any graph, you can choose to tell a story. In this case, we want to work on a feature of a software, and while working on it we get a new idea. This graph is a permanent part of your history. You can do back and look at individual changes made in any commit. You can even undo changes, apply these changes to different state of your project. This graph is the documentation of how your project came to be, i.e. the history of your project is a graph that you can traverse at will.
                     </aside>
                     </section>
                     <section id="network" data-state="network" class="slide level2">
@@ -133,9 +137,6 @@
                 <section data-transition="slide">
                     <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
                         <h1>So, how do you use git?</h1>
-                    <aside class="notes">
-                        We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content.
-                    </aside>
                     </section>
                     <section>
 <code>
@@ -183,7 +184,7 @@ to read about a specific subcommand or concept.
 </pre>
 </code>
                     <aside class="notes">
-                        Pretty simple, right? All you have to do is memorize all the functions on this list and you will be set
+                        We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content. This is a list of all the functions available to you.
                     </aside>
 </section>
 <section>
@@ -232,6 +233,7 @@ to read about a specific subcommand or concept.
 </pre>
 </code>
                     <aside class="notes">
+                        But you don't have to use every one of the functions available. I've only every had to use a handful.
  because Git was initially a toolkit for a VCS rather than a full user-friendly VCS, it has a bunch of verbs that do low-level work and were designed to be chained together UNIX style or called from scripts. These commands are generally referred to as “plumbing” commands, and the more user-friendly commands are called “porcelain” commands.
  https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
                     </aside>
@@ -254,6 +256,7 @@ to read about a specific subcommand or concept.
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
+                        <aside class="notes">Let's talk about our workflow again. To use git the right way, we need to add a couple of steps to the workflow we talked about earlier. We group changes before committing them. And we do this using the git add command. </aside>
                     </section>
 
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
