@@ -115,11 +115,24 @@
                         and like with any graph, you can choose to tell a story
                     </aside>
                     </section>
+                    <section id="network" data-state="network" class="slide level2">
+                        Network of commits
+                        <figure>
+                            <img src="img/git-flow.png"  style="max-height: 15em;"  alt=""/>
+                        </figure>
+                    <aside class="notes">
+                        .git repository is a directed network graph
+                    </aside>
+                    </section>
+                    <section>
+                        <h1>Big idea #1</h1>
+                        git history is a graph
+                    </section>
                 </section>
 
                 <section data-transition="slide">
                     <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
-                        <h1>So really, what is Git?</h1>
+                        <h1>So, how does you use git?</h1>
                     <aside class="notes">
                         We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content.
                     </aside>
@@ -219,7 +232,8 @@ to read about a specific subcommand or concept.
 </pre>
 </code>
                     <aside class="notes">
-                        Just kidding! git follows what is called onion programming. The top layer, what you see here, are what are called porcelain commands, and are probably the only ones you'll need to use. The layer below that is the plumbing commands and are what make up how git works. They are there if you need them, in case you want to dig deeper or if something goes terribly wrong. I've never had to use them in my experience.
+ because Git was initially a toolkit for a VCS rather than a full user-friendly VCS, it has a bunch of verbs that do low-level work and were designed to be chained together UNIX style or called from scripts. These commands are generally referred to as “plumbing” commands, and the more user-friendly commands are called “porcelain” commands.
+ https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
                     </aside>
 </section>
                     <section>
@@ -242,6 +256,18 @@ to read about a specific subcommand or concept.
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
                     </section>
 
+                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
+                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
+                            <h3 style="color: white;">demo</h3>
+                        </div>
+                    <aside class="notes">
+                        .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
+├── b8
+│   └── fa28116ec360ae79b59da237ca991ab31a696e
+                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
+                    So, does this look like anything familiar.
+                    </aside>
+                    </section>
                     <section class="slide level2">
                         <p class="center">
                         <img src="img/commit-1.svg"  style="max-height: 15em;"  alt="commit structure">
@@ -274,27 +300,6 @@ to read about a specific subcommand or concept.
                         Tags are labels. branch names are labels. HEAD is a label. These references point to a commit
                     </aside>
                     </section>
-                    <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
-                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
-                            <h3 style="color: white;">demo</h3>
-                        </div>
-                    <aside class="notes">
-                        .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
-├── b8
-│   └── fa28116ec360ae79b59da237ca991ab31a696e
-                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
-                    So, does this look like anything familiar.
-                    </aside>
-                    </section>
-                    <section id="network" data-state="network" class="slide level2">
-                        Network of commits
-                        <figure>
-                            <img src="img/git-flow.png"  style="max-height: 15em;"  alt=""/>
-                        </figure>
-                    <aside class="notes">
-                        .git repository is a directed network graph
-                    </aside>
-                    </section>
                     <section>
                             <p class="center">
                             <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
@@ -307,9 +312,15 @@ to read about a specific subcommand or concept.
                             <h3 style="color: white;">demo</h3>
                         </div>
                     </section>
+                    <section>
+                        <h1>Big idea #2</h1>
+                        The Head, the Index and the Sandbox
+                        <br>
+                        <a href="https://git-scm.com/blog/2011/07/11/reset.html" data-preview-link>Link</a>
+                    </section>
                 </section>
                 <section data-transition="slide">
-                    <section><h1>Visual examples</h1></section>
+                    <section><h1>Branches</h1></section>
                     <section data-state="demo2-event" data-transition="none">
                         <h3><code>git branch feature</code></h3>
                                 <div class="fragment demo2-start" style="margin: 50px 0px;">
@@ -340,7 +351,11 @@ to read about a specific subcommand or concept.
                                 </div>
                                 <div class="fragment demo4-git-fetch" style="margin: 50px 0px;">
                                 </div>
-                                <div class="fragment demo4-git-merge" style="margin: 50px 0px;">
+                                <div class="fragment demo4-git-merge-feature" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo4-git-checkout-feature" style="margin: 50px 0px;">
+                                </div>
+                                <div class="fragment demo4-git-merge-master" style="margin: 50px 0px;">
                                 </div>
                             <div >
                                 <svg id="demo4-chart"></svg>
