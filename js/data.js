@@ -31,17 +31,18 @@ var JSONData0_demo2 = {"directed": true, "HEAD": "3a253b5c7ff62479e333c4f60dc41d
     ]
 };
 
-var JSONData1_demo2 = {"directed": true, "HEAD": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+var JSONData1_demo2 = {"directed": true, "HEAD": "1ddefaae6634d68350f4b738702f1103442c1af4", 
     "links": [
-           
+            {"source": 0, "target": 1}, 
     ], 
     "multigraph": false, 
     "graph": [], 
-    "labels": ["master", "feature"], 
-    "master": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "labels": ["master", ], 
+    "master": "1ddefaae6634d68350f4b738702f1103442c1af4", 
     "feature": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
     "nodes": [
             {"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [400, 0]}, 
+            {"message": "Test commit 1", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [400.0, 200.0]}, 
     ]
 };
 
@@ -52,13 +53,26 @@ var JSONData2_demo2 = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc
     ], 
     "multigraph": false, 
     "graph": [], 
-    "labels": ["master", "feature"], 
+    "labels": ["master", ], 
     "feature": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
     "master": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
     "nodes": [
             {"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [400, 0]}, 
             {"message": "Test commit 1", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [400.0, 200.0]}, 
             {"message": "Test commit 2", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [400.0, 400.0]},
+    ]
+};
+
+var JSONData1_demo3 = {"directed": true, "HEAD": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "links": [
+    ], 
+    "multigraph": false, 
+    "graph": [], 
+    "labels": ["master", "feature"], 
+    "master": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "feature": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "nodes": [
+            {"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [400, 0]}, 
     ]
 };
 

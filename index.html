@@ -59,7 +59,7 @@
                         </p>
                     <aside class="notes">
                         git to the rescue! Essentially what git does, is that it contains a graph of all the changes you have made to every file in the project. But, unfortunately you have to understand how it works to use it effectively.
-                        Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'd like to introduce 3 big ideas that will help you understand how git works.
+                        Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'd like to introduce what I'm calling the big ideas of git that will help you understand how git works.
                     </aside>
                     </section>
                     <section>
@@ -97,9 +97,11 @@
                                 <svg id="demo1-chart"></svg>
                             </div>
                         <aside class="notes">
-                        So, when you "commit" a file, what git does is create a snapshot. A snapshot contains the current state of the file. 
+                        So, when you "commit" a file, what git does is create a snapshot. A snapshot contains the current state of the file. This is represented here by this circle. Every snapshot / commit has a number attached to it, called a HASH. This HASH is unique, and you typically you can use the first 6 or 7 characters to uniquely identify a snapshot in your project. When you make changes to your files, and save them using a commit, git creates a new snapshot with a new HASH. 
+                        git also does a couple of other things. It allows you to create a message that goes along with that commit.
+                        When a new commit is created, it saves a reference to the parent commit. A snapshot can have two parents - i.e. you can take changes from two commits and merge them into one.
                         git stores the current commit as the label HEAD 
-                        History is different from having multiple copies.
+                        In the word document VCS, we created multiple versions but we did not track how we got to each state. git allows us to do that.
                         You can create snapshots as often as you like, as you add incremental changes to a file. And every snapshot is connected to its "parent" or previous snapshot. This, as you can imagine, forms a graph.
                         </aside>
                     </section>
@@ -187,7 +189,7 @@ to read about a specific subcommand or concept.
 </pre>
 </code>
                     <aside class="notes">
-                        We spoke about a lot of things, but we didn't really get to what git really is. In a way, git can be described as a database management system and toolkit. There are a bunch of functions that help organize snapshots of content. This is a list of all the functions available to you.
+                        We spoke about git commit. the graph that we created can be imagined as a database, if we saw one function that helps use manage this database i.e. add commits to it, but what if you wanted to do more, like manipulate an existing snapshot, delete a set of changes, reorder your history. git is the toolkit that lets you do that. There are a bunch of functions that help organize snapshots of content. This is a list of all the functions available to you.
                     </aside>
 </section>
 <section>
@@ -259,7 +261,10 @@ to read about a specific subcommand or concept.
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
-                        <aside class="notes">Let's talk about our workflow again. To use git the right way, we need to add a couple of steps to the workflow we talked about earlier. We group changes before committing them. And we do this using the git add command. </aside>
+                        <aside class="notes">Let's talk about our workflow again. To use git we need to add a couple of steps to the workflow we talked about earlier. We group changes before committing them.
+                            And we do this using the git add command.
+                            if we open a folder and try to "git add" a file, git will throw us an error. it doesn't know where to add the file to. We need to create a .git folder first and we do that using git init. You only need to do this once for a project, at the every beginning. If a project is already using git, then that .git folder exists and you can run any git command.
+                        </aside>
                     </section>
                     <section>
                             <p class="center">
@@ -267,7 +272,7 @@ to read about a specific subcommand or concept.
                                 <br>
                             <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                             </p>
-                            <aside class="notes">Here is another way to look at this</aside>
+                            <aside class="notes"> The most important takeaway here is that you use git add to create what you want your next snapshot to look like. Here is another way to look at this</aside>
                     </section>
 
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
@@ -278,6 +283,9 @@ to read about a specific subcommand or concept.
                         .git folder is the database of key value pairs that track your project history. You can start a git repository by typing `git init`. When you add a file, git runs a SHA1 hash on the file which returns a hash. This hash is stored in a tree object and a commit object. If you create a file on your machine called `readme` and write `# farm` in it, and `git add` it to an empty repo, you should get the following folder in your .git repo
 ├── b8
 │   └── fa28116ec360ae79b59da237ca991ab31a696e
+Computes the hash of the file.
+Stores the contents of the README file using the hash of the file to name the file.
+Adds a reference to the README file to the git index
                     because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
                     So, does this look like anything familiar.
                     </aside>
@@ -304,16 +312,6 @@ to read about a specific subcommand or concept.
                         Let's say, at this point we also tag the snapshot. We now make a change to another file.
                     </aside>
                     </section>
-                    <section class="slide level2">
-                        <p class="center">
-                        <img src="img/commit-3.svg"  style="max-height: 15em;"  alt="commit structure">
-                            <br>
-                        <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
-                        </p>
-                    <aside class="notes">
-                        Tags are labels. branch names are labels. HEAD is a label. These references point to a commit
-                    </aside>
-                    </section>
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-demo.mov?raw=true" data-background-color="#000000">
                         <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
                             <h3 style="color: white;">demo</h3>
@@ -321,7 +319,7 @@ to read about a specific subcommand or concept.
                     </section>
                     <section>
                         <h1>Big idea #2</h1>
-                        The Head, the Index and the Sandbox
+                        Difference between Head, Index and Working directory
                         <br>
                         <a href="https://git-scm.com/blog/2011/07/11/reset.html" data-preview-link>Link</a>
                     </section>
@@ -329,7 +327,7 @@ to read about a specific subcommand or concept.
                 <section data-transition="slide">
                     <section><h1>Branches</h1></section>
                     <section data-state="demo2-event" data-transition="none">
-                        <h3><code>git branch feature</code></h3>
+                        <h3><code>git branch master</code></h3>
                                 <div class="fragment demo2-start" style="margin: 50px 0px;">
                                 </div>
                                 <div class="fragment demo2-git-branch" style="margin: 50px 0px;">
@@ -339,6 +337,9 @@ to read about a specific subcommand or concept.
                             <div >
                                 <svg id="demo2-chart"></svg>
                             </div>
+                    <aside class="notes">
+                        Let's talk about branches. Branches are just labels. The default branch is master. HEAD represents your current commit. When you add a snapshot succesfully, git will change the reference of the branch
+                    </aside>
                     </section>
                     <section data-state="demo3-event" data-transition="none">
                         <h3><code>git checkout -b feature</code></h3>

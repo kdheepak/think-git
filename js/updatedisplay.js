@@ -206,7 +206,7 @@ Reveal.addEventListener( 'fragmentshown', function( event ) {
         setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
     }
     if (classAttribute.indexOf("demo3-git-checkout-b") > -1) {
-        setTimeout(displayData, 500, JSONData1_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData1_demo3, vis, h, scaleY);
     }
     else if (classAttribute.indexOf("demo3-git-commit-0") > -1) {
         setTimeout(displayData, 500, JSONData2_demo3, vis, h, scaleY);
@@ -226,7 +226,7 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
         setTimeout(displayData, 500, JSONData0_demo2, vis, h, scaleY);
     }
     else if (classAttribute.indexOf("demo3-git-commit-0") > -1) {
-        setTimeout(displayData, 500, JSONData1_demo2, vis, h, scaleY);
+        setTimeout(displayData, 500, JSONData1_demo3, vis, h, scaleY);
     }
     else if (classAttribute.indexOf("demo3-git-checkout") > -1) {
         setTimeout(displayData, 500, JSONData2_demo3, vis, h, scaleY);
