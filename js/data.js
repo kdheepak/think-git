@@ -46,6 +46,39 @@ var JSONData1_demo2 = {"directed": true, "HEAD": "1ddefaae6634d68350f4b738702f11
     ]
 };
 
+var JSONData1_demo6 = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
+    "links": [
+            {"source": 0, "target": 1}, 
+            {"source": 1, "target": 2},
+    ], 
+    "multigraph": false, 
+    "graph": [], 
+    "labels": ["master", "feature"], 
+    "master": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "feature": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
+    "nodes": [
+            {"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [400, 0]}, 
+            {"message": "Test commit 1", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [200.0, 200.0]}, 
+            {"message": "Test commit 2", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [200.0, 400.0]},
+    ]
+};
+var JSONData2_demo6 = {"directed": true, "HEAD": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "links": [
+            {"source": 0, "target": 1}, 
+            {"source": 1, "target": 2},
+    ], 
+    "multigraph": false, 
+    "graph": [], 
+    "labels": ["master", "feature"], 
+    "master": "3a253b5c7ff62479e333c4f60dc41d46863e8905", 
+    "feature": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
+    "nodes": [
+            {"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [400, 0]}, 
+            {"message": "Test commit 1", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [200.0, 200.0]}, 
+            {"message": "Test commit 2", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [200.0, 400.0]},
+    ]
+};
+
 var JSONData2_demo2 = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
     "links": [
             {"source": 0, "target": 1}, 
@@ -176,6 +209,24 @@ var JSONData6_demo4 = {"directed": true, "HEAD": "590e14f6c62f904af769a4143fe067
     ]
 };
 
+var JSONData2_demo4 = {"directed": true, "HEAD": "b2e6afb9d645c70a48a0ad167141d4657d5f3059", 
+    "links": [
+            {"source": 0, "target": 1}, 
+            {"source": 1, "target": 2},
+            {"source": 0, "target": 3},
+    ], 
+    "multigraph": false, 
+    "graph": [], 
+    "labels": ["master", "feature"], 
+    "master": "b2e6afb9d645c70a48a0ad167141d4657d5f3059", 
+    "feature": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
+    "nodes": [
+            {"message": "Initial commit", "id": "3a253b5c7ff62479e333c4f60dc41d46863e8905", "pos": [400, 0]}, 
+            {"message": "Test commit 1", "id": "1ddefaae6634d68350f4b738702f1103442c1af4", "pos": [200.0, 200.0]}, 
+            {"message": "Test commit 2", "id": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", "pos": [200.0, 400.0]},
+            {"message": "Test commit 3", "id": "b2e6afb9d645c70a48a0ad167141d4657d5f3059", "pos": [400.0, 300.0]},
+    ]
+};
 var JSONData4_demo3 = {"directed": true, "HEAD": "0b66dad086ed9fafe3c1adab66a8bc9d4f2c43b2", 
     "links": [
             {"source": 0, "target": 1}, 
