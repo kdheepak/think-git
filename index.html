@@ -48,8 +48,9 @@
                     <aside class="notes">
                         If you've ever worked on a paper using Word, you've probably done this. The reason one typically does this is because they like having a backup of all their past changes. If someone wants to delete a paragraph, you keep a copy of the old version just in case and before you know it you have like 10 versions floating out there.
                         If you are collaborating with someone, this becomes more challenging. Tracking changes and merging content added by different people is time consuming.
-                        As you can imagine, this presents a problem in software development. Additionally, developers frequently experiment with features and this should never affect the "master" copy of the project
+                        As you can imagine, this presents a problem in software development.
                         It is likely that multiple people will work on the same file sometimes even at the same time.
+                        Even small software projects can have tens of files in multiple folders. Additionally, developers frequently experiment with features and this should never affect the "master" copy of the project
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
@@ -60,7 +61,8 @@
                             <a href="http://imgs.xkcd.com/comics/git.png" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
-                        git to the rescue! Essentially what git does, is that it contains a graph of all the changes you have made to every file in the project. But, unfortunately you have to understand how it works to use it effectively.
+                        git to the rescue! Essentially what git can be is this, it can be a history of all changes you have made to every file in the project. 
+                        But, unfortunately you have to understand how it works to use it effectively.
                         Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'd like to introduce what I'm calling the big ideas of git that will help you understand how git works.
                     </aside>
                     </section>
@@ -85,11 +87,15 @@
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
-                        <aside class="notes">This is a simple example of a workflow. You edit a file and you save the file. SPC. 
-                            You can save the file as a different name as backup.
-                            However, when you use git you don't have to. 
-                            You can use any editor/IDE to modify a file. and you save your progress as normal.
-                            When you want to save the current version of the file as a backup, you do that by taking a snapshot of the current state. You do this with a command called git commit.
+                        <aside class="notes">
+                            Before we talk about git, let's talk about workflow.
+                            
+                            This is a simple example of a workflow. You edit a file and you save the file. SPC. 
+                            Once you reach what you consider a stable state, you can save the file as a different name as backup, or save it on dropbox or however you usually implement a version control system
+                            When you use git however, you don't have to save a different version of the file.
+                            When you are ready to save the current version of the file as a backup, you do that in git by taking a snapshot of the current state. 
+                            You can take a "snapshot" of the current state of a file by using a command called git commit. <SPC>
+                            What really happens is that when you can create a "snapshot", it records the current state of all the files in the directory being tracked.
                     </section>
                     <section data-state="demo1-event" data-transition="none">
                         <h3><code>git commit</code></h3>
@@ -103,10 +109,19 @@
                                 <svg id="demo1-chart"></svg>
                             </div>
                         <aside class="notes">
-                        So, when you "commit" a file, what git does is create a snapshot. A snapshot contains the current state of the file. This is represented here by this circle. Every snapshot / commit has a number attached to it, called a HASH. This HASH is unique, and you typically you can use the first 6 or 7 characters to uniquely identify a snapshot in your project. When you make changes to your files, and save them using a commit, git creates a new snapshot with a new HASH. 
-                        git also does a couple of other things. It allows you to create a message that goes along with that commit.
-                        When a new commit is created, it saves a reference to the parent commit. A snapshot can have two parents - i.e. you can take changes from two commits and merge them into one.
-                        git stores the current commit as the label HEAD 
+                            So what does a snapshot look like?
+                            Let's assume that a snapshot looks like this circle over here.
+                        As I mentioned earlier, a snapshot contains the current state of the file or directory. 
+                        When git creates a snapshot, it also creates a number and attaches that number to it. 
+                        git uses an algorithm to calculate this number and
+                        this number is unique, it is very unlikely that two such numbers will be the same
+                        Every snapshot / commit you create will have its own number attached to it. And this number is called a HASH. You can typically you can use the first 6 or 7 characters to uniquely identify a snapshot in your project. 
+                        Let's say you have created this first commit, and now you make more changes to the file. and want to save them.
+                        When you make changes to your files, and save them using git commit, git creates a new snapshot with a new HASH. 
+                        git also does a few other things. 
+                        1) It allows you to create a message that goes along with that commit. A commit has to have a message!
+                        2) When a new commit is created, it saves a reference to the parent commit. A snapshot can have multiple parents - i.e. you can take changes from two commits and merge them into one.
+                        3) Whatever commit represents the current project state, git stores a reference to that current commit in the label HEAD 
                         In the word document VCS, we created multiple versions but we did not track how we got to each state. git allows us to do that.
                         This, as you can imagine, forms a graph.
                         You may be wondering, where does git store all this - we will get to that.
@@ -130,12 +145,13 @@
                     <aside class="notes">
                         and like with any graph, you can choose to tell a story. 
                         In this case, we want to work on a feature of a software, and while working on it we get a new idea. 
-                        Since git can track parents, and can also track multiple parents, we can create a different branch to work on a test feature
-                        This graph is a permanent part of your history. 
-                        You can do back and review individual changes made in any commit. 
-                        You can discard a branch entirely, or switch between branches
+                        You can go back to a previous state of the project, and branch off to work on a new idea - not affecting your current work.
+                        And, when you are ready, you can pull these changes back to your master branch
+                        You can go back and review individual changes made in any commit. 
                         You can even undo changes, apply these changes to different state of your project. 
-                        And you can pull these changes back to your master branch
+                        You could also discard a branch entirely, or switch between branches. 
+                        Branches are awesome, and we'll talk more able branches a little later.
+                        The point here is that this graph exists.
                         This graph is the documentation of how your project came to be, i.e. the history of your project is a graph that you can traverse at will.
                     </aside>
                     </section>
@@ -275,9 +291,15 @@ to read about a specific subcommand or concept.
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
-                        <aside class="notes">Let's talk about our workflow again. To use git we need to add a couple of steps to the workflow we talked about earlier. We group changes before committing them.
+                        <aside class="notes">Let's talk about our workflow again. To  actually use git we need to add a couple of steps to the workflow we talked about earlier. We group changes before committing them.
                             And we do this using the git add command.
                             if we open a folder and try to "git add" a file, git will throw us an error. it doesn't know where to add the file to. We need to create a .git folder first and we do that using git init. You only need to do this once for a project, at the every beginning. If a project is already using git, then that .git folder exists and you can run any git command.
+                            the git add command, adds the content you specify to a "staging area"
+                            You can add multiple files at the same time to the staging area
+                            And then, when you call the git commit function, git takes everything that is in the staging area and pushes it into a new snapshot
+                            Think of the content in the staging area as the changes you would like your next snapshot to represent
+                            <SPC>
+                            git status is used to review your changes, and git commit creates the snapshot
                         </aside>
                     </section>
                     <section>
@@ -286,7 +308,14 @@ to read about a specific subcommand or concept.
                                 <br>
                             <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                             </p>
-                            <aside class="notes"> The most important takeaway here is that you use git add to create what you want your next snapshot to look like. Here is another way to look at this</aside>
+                            <aside class="notes"> 
+                                Here is another way to look at this</aside>
+                                The most important takeaway here is that you use git add to create what you want your next snapshot to look like. 
+                                The working directory is the files in your folder.
+                                You make changes to your working directory and git add them to the staging area. 
+                                you can add multiple files
+                                Next, you commit the staged files into a git repository
+                                git commit updates the .git folder and thereby updating the graph
                     </section>
 
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
