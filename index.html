@@ -431,31 +431,18 @@ Adds a reference to the README file to the git index
                 </section>
 
                 <section data-transition="slide">
-                    <section><h1>Remote</h1></section>
-                    <section>
-                            <p class="center">
-                            <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
-                                <br>
-                            <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
-                            </p>
-                            <aside class="notes">Everything we've seen so far has been local. </aside>
+                    <section data-transition="slide">
+                    <h1>Merge Conflict</h1>
                     </section>
-                    <section data-state="demo5-event" data-transition="none">
-                        <h3><code>git pull = git fetch + git merge</code></h3>
-                    </section>
+
                     <section data-background-video="" data-background-color="#000000">
                         <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
                             <h3 style="color: white;">demo</h3>
                         </div>
                     <aside class="notes">
-                        demo showing git fetch
+                        demo showing git mergetool
                     </aside>
                     </section>
-                    <section>
-                        <h1>Big idea #4</h1>
-                        Remote is special branch, but a branch nonetheless
-                    </section>
-
                 </section>
 
                 <section data-transition="slide">
@@ -493,10 +480,39 @@ Adds a reference to the README file to the git index
                     </aside>
                     </section>
                     <section>
-                        <h1>Big idea #5</h1>
-                        Treat remote commits as set stone
+                        <h1>Big idea #4</h1>
+                        Local commits are yours to do with what you like
                     </section>
                 </section>
+
+                <section data-transition="slide">
+                    <section><h1>Remote</h1></section>
+                    <section>
+                            <p class="center">
+                            <img src="img/local-remote.svg"  style="max-height: 15em;"  alt="git operations">
+                                <br>
+                            <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
+                            </p>
+                            <aside class="notes">Everything we've seen so far has been local. </aside>
+                    </section>
+                    <section data-state="demo5-event" data-transition="none">
+                        <h3><code>git pull = git fetch + git merge</code></h3>
+                    </section>
+                    <section data-background-video="" data-background-color="#000000">
+                        <div class="fragment hide-on-current-fragment" style="background-color: rgba(0, 0, 0, 0.75); color: #fff; padding: 20px;">
+                            <h3 style="color: white;">demo</h3>
+                        </div>
+                    <aside class="notes">
+                        demo showing git fetch
+                    </aside>
+                    </section>
+                    <section>
+                        <h1>Big idea #5</h1>
+                        Remote is special branch, but a branch nonetheless
+                    </section>
+
+                </section>
+
 
                 <section data-transition="slide">
                     <section data-transition="slide">
@@ -533,7 +549,7 @@ Adds a reference to the README file to the git index
                         <h3>Branches are inexpensive</h3>
                     </section>
                     <section id="commit-only-if-tests-pass" class="slide level2">
-                        <h3>Push only if tests pass</h3>
+                        <h3>Push to master only if tests pass</h3>
                     </section>
                     <section id="write-good-commit-messages" class="slide level2">
                         <h3>Write good commit messages!</h3>
