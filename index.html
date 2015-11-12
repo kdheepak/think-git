@@ -46,11 +46,13 @@
                             <a href="http://www.phdcomics.com/comics/archive/phd101212s.gif" data-preview-link>Link</a>
                         </p>
                     <aside class="notes">
-                        If you've ever worked on a paper using Word, you've probably done this. The reason one typically does this is because they like having a backup of all their past changes. If someone wants to delete a paragraph, you keep a copy of the old version just in case and before you know it you have like 10 versions floating out there.
-                        If you are collaborating with someone, this becomes more challenging. Tracking changes and merging content added by different people is time consuming.
+                        If you've ever worked on a paper using Word, you've probably created a verison control system that works for you by saving a file with different "version" tags.
+                        The reason someone might do this is because they like having a backup of all their past changes. If someone wants to delete a paragraph, you keep a copy of the old version just in case
+                        And when you are collaborating with someone, this becomes more challenging. Tracking changes and merging content added by different people is time consuming.
                         As you can imagine, this presents a problem in software development.
                         It is likely that multiple people will work on the same file sometimes even at the same time.
-                        Even small software projects can have tens of files in multiple folders. Additionally, developers frequently experiment with features and this should never affect the "master" copy of the project
+                        Even small software projects can have tens of files in multiple folders. 
+                        Additionally, developers frequently experiment with features and this should never affect the "master" copy of the project
                     </aside>
                     </section>
                     <section id="section" class="slide level2">
@@ -63,7 +65,9 @@
                     <aside class="notes">
                         git to the rescue! Essentially what git can be is this, it can be a history of all changes you have made to every file in the project. 
                         But, unfortunately you have to understand how it works to use it effectively.
-                        Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. With this talk, I'd like to introduce what I'm calling the big ideas of git that will help you understand how git works.
+                        Most people when introduced to git, are thrown into using it, and usually don't understand how it works. When something you have never encountered before occurs, you might not know what to do. 
+                        I know I've deleted projects and downloaded a fresh copy of a repo because I accidentally created a conflict of some sort. 
+                        With this talk, I'd like to introduce what I'm calling the big ideas of git that will help you understand how git works.
                     </aside>
                     </section>
                     <section>
@@ -94,7 +98,7 @@
                             Once you reach what you consider a stable state, you can save the file as a different name as backup, or save it on dropbox or however you usually implement a version control system
                             When you use git however, you don't have to save a different version of the file.
                             When you are ready to save the current version of the file as a backup, you do that in git by taking a snapshot of the current state. 
-                            You can take a "snapshot" of the current state of a file by using a command called git commit. <SPC>
+                            You can take a "snapshot" of the current state of a file by using a command called git commit.
                             What really happens is that when you can create a "snapshot", it records the current state of all the files in the directory being tracked.
                     </section>
                     <section data-state="demo1-event" data-transition="none">
@@ -120,11 +124,11 @@
                         When you make changes to your files, and save them using git commit, git creates a new snapshot with a new HASH. 
                         git also does a few other things. 
                         1) It allows you to create a message that goes along with that commit. A commit has to have a message!
-                        2) When a new commit is created, it saves a reference to the parent commit. A snapshot can have multiple parents - i.e. you can take changes from two commits and merge them into one.
+                        2) When a new commit is created, it saves a reference to the parent commit. A snapshot can have multiple parents - i.e. you can take changes from two commits and merge them into one. The current commit HASH number depends on the path, i.e. it depends on what the parent is. If you change the parent hash i.e. change the content in the parent, every commit hash after that will be different.
                         3) Whatever commit represents the current project state, git stores a reference to that current commit in the label HEAD 
-                        In the word document VCS, we created multiple versions but we did not track how we got to each state. git allows us to do that.
-                        This, as you can imagine, forms a graph.
+                        In the word document VCS, we created multiple versions but we did not track how we got to each state. git allows us to do that by storing all this information
                         You may be wondering, where does git store all this - we will get to that.
+                        This, as you can imagine, forms a graph.
                         </aside>
                     </section>
                     <section data-state="network" class="slide level2">
@@ -158,12 +162,15 @@
                     <section>
                         <h1>Big idea #1</h1>
                         git history is a graph
+                        <aside class="notes">
+                            So that's big idea number 1, git history is a graph that you can traverse, allowing you to move to any "saved" state in a project
+                        </aside>
                     </section>
                 </section>
 
                 <section data-transition="slide">
                     <section id="so-really-what-is-git" class="titleslide slide level1" data-transition="slide">
-                        <h1>So, how do you use git?</h1>
+                        <h1>git functions</h1>
                     </section>
                     <section>
 <code>
@@ -211,15 +218,19 @@ to read about a specific subcommand or concept.
 </pre>
 </code>
                     <aside class="notes">
-                        We spoke about git commit. 
-                        The graph that we created has to be stored somewhere, right? 
-                        This graph is stored in a .git folder and every folder on your computer that has a .git folder is git repository. There is only one such .git folder in a git repo.
+                        So we know that git history is a graph, right? And 
+                        This graph that we created has to be stored somewhere, right? 
+                        This graph is stored in a .git folder 
+                        Every folder on your computer that has a .git folder is git repository.
+                        There is only one such .git folder in a git repo.
                         all git commit does, is add content to that .git folder.
+                        and git commit is only just one function that git provides
                         what if you wanted to do more, like manipulate an existing snapshot, delete a set of changes, reorder your history. 
                         git offers you other tools to do that.
                         git is essentially a toolkit that contains a bunch of functions that help organize snapshots of content. 
-                        Note - git is not github. what is github? github stores the .git folder and that's basically all it does
                         This is a list of all the functions available to you.
+                        Note - git is not github. what is github? github stores git repository in the internet and that's basically all it does
+                        So, as I was saying this is the list of functions
                     </aside>
 </section>
 <section>
@@ -298,8 +309,12 @@ to read about a specific subcommand or concept.
                             You can add multiple files at the same time to the staging area
                             And then, when you call the git commit function, git takes everything that is in the staging area and pushes it into a new snapshot
                             Think of the content in the staging area as the changes you would like your next snapshot to represent
-                            <SPC>
-                            git status is used to review your changes, and git commit creates the snapshot
+                            SPC
+                            Before you commit these changes to a new snapshot, you might want to review your changes.
+                            SPC
+                            git status is used to review your changes, 
+                            SPC
+                            And to actually save this snapshot you can use git commit
                         </aside>
                     </section>
                     <section>
@@ -443,6 +458,16 @@ Adds a reference to the README file to the git index
                         demo showing git mergetool
                     </aside>
                     </section>
+
+                    <section>
+                        <h3>Best Mergetools</h3>
+                        <br>
+                        <a href="http://stackoverflow.com/questions/572237/whats-the-best-three-way-merge-tool" data-preview-link>Link</a>
+                    <aside class="notes">
+                        There are mergetools out there other than vim, kdiff3 is open source and free on all platforms. p4merge is great.
+                    </aside>
+                    </section>
+
                 </section>
 
                 <section data-transition="slide">
