@@ -83,7 +83,11 @@
                         <div style="text-align: center; width: 100%; display: inline-block"></div>
                         <div style="text-align: left; width: 45%; display: inline-block">Save changes</div>
                         <div style="text-align: center; width: 45%; display: inline-block" class="fragment" data-fragment-index="5"><code style="background-color: black; color: white; border-radius: 5em; padding: .25em" >git commit</code></div>
-                        <aside class="notes">This is a simple example of a workflow. You edit a file and you save the file. SPC. You can use any editor/IDE to modify a file. SPC. And instead of only just saving, you have to perform this additional command - git commit </aside>
+                        <aside class="notes">This is a simple example of a workflow. You edit a file and you save the file. SPC. 
+                            You can save the file as a different name as backup.
+                            However, when you use git you don't have to. 
+                            You can use any editor/IDE to modify a file. and you save your progress as normal.
+                            When you want to save the current version of the file as a backup, you do that by taking a snapshot of the current state. You do this with a command called git commit.
                     </section>
                     <section data-state="demo1-event" data-transition="none">
                         <h3><code>git commit</code></h3>
@@ -102,7 +106,8 @@
                         When a new commit is created, it saves a reference to the parent commit. A snapshot can have two parents - i.e. you can take changes from two commits and merge them into one.
                         git stores the current commit as the label HEAD 
                         In the word document VCS, we created multiple versions but we did not track how we got to each state. git allows us to do that.
-                        You can create snapshots as often as you like, as you add incremental changes to a file. And every snapshot is connected to its "parent" or previous snapshot. This, as you can imagine, forms a graph.
+                        This, as you can imagine, forms a graph.
+                        You may be wondering, where does git store all this - we will get to that.
                         </aside>
                     </section>
                     <section data-state="network" class="slide level2">
@@ -121,16 +126,15 @@
                                 <svg id="demo0-chart"></svg>
                             </div>
                     <aside class="notes">
-                        and like with any graph, you can choose to tell a story. In this case, we want to work on a feature of a software, and while working on it we get a new idea. This graph is a permanent part of your history. You can do back and look at individual changes made in any commit. You can even undo changes, apply these changes to different state of your project. This graph is the documentation of how your project came to be, i.e. the history of your project is a graph that you can traverse at will.
-                    </aside>
-                    </section>
-                    <section id="network" data-state="network" class="slide level2">
-                        Network of commits
-                        <figure>
-                            <img src="img/git-flow.png"  style="max-height: 15em;"  alt=""/>
-                        </figure>
-                    <aside class="notes">
-                        .git repository is a directed network graph
+                        and like with any graph, you can choose to tell a story. 
+                        In this case, we want to work on a feature of a software, and while working on it we get a new idea. 
+                        Since git can track parents, and can also track multiple parents, we can create a different branch to work on a test feature
+                        This graph is a permanent part of your history. 
+                        You can do back and review individual changes made in any commit. 
+                        You can discard a branch entirely, or switch between branches
+                        You can even undo changes, apply these changes to different state of your project. 
+                        And you can pull these changes back to your master branch
+                        This graph is the documentation of how your project came to be, i.e. the history of your project is a graph that you can traverse at will.
                     </aside>
                     </section>
                     <section>
@@ -189,7 +193,15 @@ to read about a specific subcommand or concept.
 </pre>
 </code>
                     <aside class="notes">
-                        We spoke about git commit. the graph that we created can be imagined as a database, if we saw one function that helps use manage this database i.e. add commits to it, but what if you wanted to do more, like manipulate an existing snapshot, delete a set of changes, reorder your history. git is the toolkit that lets you do that. There are a bunch of functions that help organize snapshots of content. This is a list of all the functions available to you.
+                        We spoke about git commit. 
+                        The graph that we created has to be stored somewhere, right? 
+                        This graph is stored in a .git folder and every folder on your computer that has a .git folder is git repository. There is only one such .git folder in a git repo.
+                        all git commit does, is add content to that .git folder.
+                        what if you wanted to do more, like manipulate an existing snapshot, delete a set of changes, reorder your history. 
+                        git offers you other tools to do that.
+                        git is essentially a toolkit that contains a bunch of functions that help organize snapshots of content. 
+                        Note - git is not github. what is github? github stores the .git folder and that's basically all it does
+                        This is a list of all the functions available to you.
                     </aside>
 </section>
 <section>
