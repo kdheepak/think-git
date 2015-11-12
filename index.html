@@ -309,13 +309,14 @@ to read about a specific subcommand or concept.
                             <a href="https://github.com/schacon/git-presentations" data-preview-link>Link</a>
                             </p>
                             <aside class="notes"> 
-                                Here is another way to look at this</aside>
+                                Here is another way to look at this
                                 The most important takeaway here is that you use git add to create what you want your next snapshot to look like. 
                                 The working directory is the files in your folder.
                                 You make changes to your working directory and git add them to the staging area. 
                                 you can add multiple files
                                 Next, you commit the staged files into a git repository
                                 git commit updates the .git folder and thereby updating the graph
+                            </aside>
                     </section>
 
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-tree.mov?raw=true" data-background-color="#000000">
@@ -329,8 +330,9 @@ to read about a specific subcommand or concept.
 Computes the hash of the file.
 Stores the contents of the README file using the hash of the file to name the file.
 Adds a reference to the README file to the git index
-                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
-                    So, does this look like anything familiar.
+                    because git only cares about content. git uses content as a heuristic to find if a file has been renamed. if too much of the content has been changed between two commits when a rename occured, git will think it is a different file. and you can manually set this heuristic, I believe the default is  50%. 
+                    When you git commit the staged file, git creates a blob and a tree. 
+                    git does calculate a diff though, only when it needs to push. Again, this can be set manually. You can say - take longer than you usually do, but make me the smallest patch you can. 
                     </aside>
                     </section>
                     <section class="slide level2">
@@ -352,7 +354,7 @@ Adds a reference to the README file to the git index
                         </p>
                     <aside class="notes">
                         If the bottom file was modified, and committed to the repository in a new snapshot, git will still use the same blobs for unmodified files
-                        Let's say, at this point we also tag the snapshot. We now make a change to another file.
+                        There are other things going on here, like the tag which is just a label. Every branch name is just a label too and we'll touch on that later. Now for a quick demo
                     </aside>
                     </section>
                     <section data-background-video="https://github.com/kdheepak89/think-git/blob/gh-pages/img/git-demo.mov?raw=true" data-background-color="#000000">
@@ -381,7 +383,7 @@ Adds a reference to the README file to the git index
                                 <svg id="demo2-chart"></svg>
                             </div>
                     <aside class="notes">
-                        Let's talk about branches. Branches are just labels. The default branch is master. HEAD represents your current commit. When you add a snapshot succesfully, git will change the reference of the branch
+                        Let's talk about branches. Branches are just labels. The default branch is master. HEAD represents your current commit. When you add a snapshot succesfully, git will change the reference of the branch to the new HEAD, which is the new or current commit
                     </aside>
                     </section>
                     <section data-state="demo3-event" data-transition="none">
